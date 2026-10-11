@@ -3,6 +3,12 @@
 This repo scores an unusual Yahoo league at its exact settings and tracks a roster
 week to week. Claude Code should read this file first every session — it is the memory.
 
+> **LIVE-FIRST — everything live, all of the time.** Never answer from a stale snapshot.
+> Before ANY read, refresh to live: `pull.py` for current nflverse data, resync the roster
+> and availability from live Yahoo, and during games pull again for in-progress numbers.
+> The committed `data/` snapshot is the historical tracking record, NEVER the basis for
+> advice. If something can't be refreshed, say so before answering. (owner directive, 2026-10-11)
+
 ## The league (why it's different)
 - Name: "1 Point per Yard League" (ID# 672352). Full IDP, run 10+ years.
 - 1 point per yard on passing, rushing, AND receiving. A 300-yd passing game = 300 pts.
@@ -52,6 +58,11 @@ week to week. Claude Code should read this file first every session — it is th
 - Show the work: which stat drove the number.
 
 ## TODO / roadmap
+- [ ] PRODUCT GOAL: multi-user leaguewide app — each member links their own Yahoo team (needs
+      Yahoo OAuth approval + hosting, React/Vite/Netlify). Gate: a few weeks of a validation log
+      (scoring vs official box scores, did matchup/returns reads predict, sync held) before
+      pitching to the league. (memory/productization-goal.md)
+- [x] Return-game layer: KR/PR yards-allowed per defense + returner flagging (matchups.py, artifact).
 - [ ] Team DST scoring (points-allowed + yards-allowed tiers) from nflverse team stats + schedules.
 - [x] Waiver watch filtered by actual Yahoo availability (Chrome sync, 2026-09-30).
 - [ ] Weekly automation: cron `pull.py` + `report.py` after Tuesday waiver run.
