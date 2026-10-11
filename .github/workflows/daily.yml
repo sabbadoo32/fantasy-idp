@@ -20,7 +20,7 @@ jobs:
       - run: pip install -q -r requirements.txt
       - run: python src/pull.py 2026
       - run: python src/matchups.py && python src/report.py
-      - run: python src/publish_data.py grid
+      - run: python src/publish_data.py grid && python src/publish_data.py report
       - name: Commit weekly snapshot
         run: |
           git config user.name "sabbadoo32"

@@ -135,6 +135,98 @@ def fmt_snap(x):
     arrow = " ↑" if d >= 10 else (" ↓" if d <= -10 else "")
     return f"{x['snap_last']:.0f}%{arrow}"
 
+def _setup(season, week):
+    """Shared computation for main() and report_json(): returns (season, week, mine, agg,
+    floor, pool, dstt, avail_note)."""
+    if season is None:
+        season = max(int(p.stem.split("_")[-1]) for p in (ROOT / "data").glob("stats_player_week_*.parquet"))
+    df = pd.read_parquet(ROOT / "data" / f"stats_player_week_{season}.parquet")
+    if week is None:
+        from matchups import _last_complete_week
+        week = _last_complete_week(season, int(df["week"].max()))
+    agg = season_table(df, week)
+    sn = snaps(season, week)
+    if sn is not None:
+        agg = agg.merge(sn, on="key", how="left")
+    hs = health(season, week)
+    if hs is not None:
+        agg = agg.merge(hs, on="player_id", how="left")
+        agg["through"] = week
+        tags = agg.apply(status_tag, axis=1, result_type="expand")
+        agg["health"], agg["unavailable"] = tags[0], tags[1].astype(bool)
+    else:
+        agg["health"], agg["unavailable"] = "", False
+    roster = load_roster()
+    taken, avail_note = load_taken()
+    agg["mine"] = agg["key"].isin(set(roster["key"]))
+    agg["available"] = ~agg["mine"] & (~agg["key"].isin(taken) if taken is not None else True)
+    mine = roster.merge(agg, on="key", how="left")
+    floor = {}
+    st = mine[(mine["role"] == "start") & mine["slot"].isin(SLOT_GRP)]
+    for slot, grp in SLOT_GRP.items():
+        s = st[st["slot"] == slot].dropna(subset=["ppg"])
+        if len(s):
+            w = s.sort_values("ppg").iloc[0]
+            floor[grp] = (w["name"], w["ppg"])
+    pool = agg[agg["available"] & (agg["games"] >= MIN_GAMES) & ~agg["unavailable"]]
+    dstt = dst_table(season, week)
+    return season, week, mine, agg, floor, pool, dstt, avail_note
+
+
+def report_json(season=None, week=None):
+    """The weekly analysis as structured data for the app's Analysis tab."""
+    season, week, mine, agg, floor, pool, dstt, avail_note = _setup(season, week)
+    order = {s: i for i, s in enumerate(list(SLOT_GRP) + ["W/T", "W/R", "DEF", "BENCH", "IR"])}
+    roster_rows = []
+    for _, x in mine.sort_values(by="slot", key=lambda s: s.map(order).fillna(99)).iterrows():
+        if x["slot"] == "DEF" and dstt is not None and x.get("roster_team") in dstt.index:
+            r = dstt.loc[x["roster_team"]]
+            roster_rows.append({"slot": "DEF", "name": x["name"], "ppg": float(r["ppg"]),
+                                "l2": float(r["l2"]), "snap": "-", "rank": f"DST #{int(r['rank'])}", "flags": ""})
+            continue
+        if pd.isna(x.get("ppg")):
+            roster_rows.append({"slot": x["slot"], "name": x["name"], "ppg": None, "l2": None,
+                                "snap": "-", "rank": "no games yet", "flags": ""})
+            continue
+        roster_rows.append({"slot": x["slot"], "name": x["name"], "ppg": float(x["ppg"]),
+                            "l2": None if pd.isna(x["l2"]) else float(x["l2"]), "snap": fmt_snap(x),
+                            "rank": f"{x['grp']} #{int(x['pos_rank'])}", "flags": flags(x, week)})
+    swaps = []
+    for _, b in mine[mine["role"] == "bench"].dropna(subset=["ppg"]).iterrows():
+        if b.get("unavailable") is True:
+            continue
+        fl = floor.get(b["grp"])
+        if fl and b["ppg"] - fl[1] >= EDGE:
+            swaps.append({"start": b["name"], "over": fl[0], "ppg": float(b["ppg"]), "vs": float(fl[1]),
+                          "delta": round(b["ppg"] - fl[1], 1), "l2": None if pd.isna(b["l2"]) else float(b["l2"]),
+                          "snap": fmt_snap(b), "flags": flags(b, week)})
+    waiver, adds = {}, []
+    for grp in WATCH:
+        sub = pool[pool["grp"] == grp].sort_values("ppg", ascending=False).head(6)
+        if not len(sub):
+            continue
+        fl = floor.get(grp)
+        waiver[grp] = {"weakest": {"name": fl[0], "ppg": float(fl[1])} if fl else None, "players": []}
+        for _, x in sub.iterrows():
+            delta = round(x["ppg"] - fl[1], 1) if fl else None
+            waiver[grp]["players"].append({"name": x["player_display_name"], "team": x["team"],
+                "ppg": float(x["ppg"]), "l2": None if pd.isna(x["l2"]) else float(x["l2"]), "snap": fmt_snap(x),
+                "pos_rank": int(x["pos_rank"]), "delta": delta, "flags": flags(x, week)})
+            if delta is not None and delta >= EDGE:
+                adds.append({"name": x["player_display_name"], "team": x["team"], "grp": grp,
+                             "over": fl[0], "ppg": float(x["ppg"]), "vs": float(fl[1]), "delta": delta,
+                             "games": int(x["games"]), "snap": fmt_snap(x), "flags": flags(x, week)})
+    dst_watch = []
+    if dstt is not None:
+        mine_def = set(mine[mine["slot"].isin(["DEF", "BENCH"])]["roster_team"].dropna())
+        for tm, r in dstt.sort_values("ppg", ascending=False).head(8).iterrows():
+            dst_watch.append({"team": tm, "mine": tm in mine_def, "ppg": float(r["ppg"]),
+                              "l2": float(r["l2"]), "rank": int(r["rank"])})
+    return {"season": season, "week": week, "generated": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M"),
+            "availability": avail_note, "edge": EDGE, "roster": roster_rows, "start_sit": swaps,
+            "waiver": waiver, "adds": sorted(adds, key=lambda a: -a["delta"])[:6], "dst_watch": dst_watch}
+
+
 def main(season=None, week=None):
     if season is None:
         season = max(int(p.stem.split("_")[-1]) for p in (ROOT / "data").glob("stats_player_week_*.parquet"))

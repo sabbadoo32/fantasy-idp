@@ -2,6 +2,44 @@ import { useMemo, useState } from "react";
 
 const LABEL = { QB: "QB", RB: "RB", WR: "WR", TE: "TE", K: "K", "IDP-DL": "DL", "IDP-LB": "LB", "IDP-DB": "DB", DEF: "DST", KR: "KR", DST: "DST" };
 
+const RET_COLS = [["kr_yds", "KR yds/g"], ["kr_ret", "KR ret/g"], ["pr_yds", "PR yds/g"], ["ret_yds", "Total/g"]];
+
+function ReturnTable({ data, colorFor, retMine }) {
+  const [sort, setSort] = useState("kr_yds");
+  const [dir, setDir] = useState(-1);
+  const rows = [...data.defenses.filter((d) => d.returns)].sort((a, b) =>
+    sort === "team" ? (a.team < b.team ? -1 : 1) : (a.returns[sort] - b.returns[sort]) * dir);
+  const click = (c) => { if (c === sort) setDir((d) => -d); else { setSort(c); setDir(-1); } };
+  return (
+    <>
+      <h2 style={{ fontFamily: "var(--display)", textTransform: "uppercase", fontSize: 16, letterSpacing: ".04em", margin: "30px 0 8px" }}>
+        Return game <span style={{ fontFamily: "var(--body)", textTransform: "none", letterSpacing: 0, color: "var(--muted)", fontSize: 12, fontWeight: 400 }}>return yards each defense allows per game · 1 pt/yd, a value seam</span>
+      </h2>
+      <div className="scroll">
+        <table>
+          <thead><tr>
+            <th onClick={() => click("team")}>Defense</th>
+            {RET_COLS.map(([k, l]) => <th key={k} className={k === sort ? "sorted" : ""} onClick={() => click(k)}>{l}</th>)}
+          </tr></thead>
+          <tbody>
+            {rows.map((d) => (
+              <tr key={d.team}>
+                <th className={retMine.has(d.team) ? "mine" : ""}>{d.team}</th>
+                {RET_COLS.map(([k]) => (
+                  <td key={k} style={{ background: k === "ret_yds" ? colorFor(d.returns.ret_rank) : "transparent" }}>
+                    {d.returns[k].toFixed(k === "kr_ret" ? 1 : 0)}
+                    {k === "ret_yds" && <span className="r">#{d.returns.ret_rank}</span>}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
+}
+
 function colorFor(rank) {
   if (rank == null) return "transparent";
   const t = (rank - 1) / 31;
@@ -124,6 +162,7 @@ export default function Grid({ data, error }) {
           </tbody>
         </table>
       </div>
+      <ReturnTable data={data} colorFor={colorFor} retMine={retMine} />
       <p className="foot">
         KR = kickoff-return yards allowed/g (1 pt/yd). DST = team-defense points that team's offense yields/g
         (turnovers, sacks, 3-and-outs, return yards) — the axis to stream a defense on. RB splits ground / air.

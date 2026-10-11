@@ -35,9 +35,16 @@ def publish_grid():
     _write("matchups.json", data)
 
 
+def publish_report():
+    from report import report_json
+    _write("report.json", report_json())
+
+
 if __name__ == "__main__":
     what = sys.argv[1] if len(sys.argv) > 1 else "all"
     if what in ("live", "all"):
         publish_live()
     if what in ("grid", "all"):
         publish_grid()
+    if what in ("report", "all"):
+        publish_report()

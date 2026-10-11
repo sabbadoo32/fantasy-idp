@@ -2,17 +2,17 @@
   "season": 2026,
   "week": 5,
   "source": "Sleeper live + ESPN state",
-  "generated": "2026-10-11 13:22",
+  "generated": "2026-10-11 14:06",
   "me": {
     "name": "Team Work",
-    "total": 1066.0,
+    "total": 1176.0,
     "pending": 7,
     "in_progress": 10,
     "starters": [
       {
         "slot": "QB",
         "name": "Aaron Rodgers",
-        "pts": 185.0,
+        "pts": 199.0,
         "played": true,
         "live": true,
         "is_dst": false
@@ -36,7 +36,7 @@
       {
         "slot": "WR",
         "name": "Kalif Raymond",
-        "pts": 26.0,
+        "pts": 17.0,
         "played": true,
         "live": true,
         "is_dst": false
@@ -92,7 +92,7 @@
       {
         "slot": "DEF",
         "name": "Bengals",
-        "pts": 155.0,
+        "pts": 200.0,
         "played": true,
         "live": true,
         "is_dst": true
@@ -148,7 +148,7 @@
       {
         "slot": "LB",
         "name": "Blake Cashman",
-        "pts": 45.0,
+        "pts": 95.0,
         "played": true,
         "live": true,
         "is_dst": false
@@ -156,7 +156,7 @@
       {
         "slot": "LB",
         "name": "Arvell Reese",
-        "pts": 45.0,
+        "pts": 55.0,
         "played": true,
         "live": true,
         "is_dst": false
@@ -173,7 +173,7 @@
   },
   "opp": {
     "name": "OREGON DUCKS",
-    "total": 798.0,
+    "total": 991.0,
     "pending": 9,
     "in_progress": 4,
     "starters": [
@@ -236,7 +236,7 @@
       {
         "slot": "W/T",
         "name": "Christian Watson",
-        "pts": 55.0,
+        "pts": 163.0,
         "played": true,
         "live": true,
         "is_dst": false
@@ -300,7 +300,7 @@
       {
         "slot": "DL",
         "name": "Boye Mafe",
-        "pts": 15.0,
+        "pts": 70.0,
         "played": false,
         "live": false,
         "is_dst": false
@@ -332,7 +332,7 @@
       {
         "slot": "LB",
         "name": "Payton Wilson",
-        "pts": 80.0,
+        "pts": 110.0,
         "played": true,
         "live": true,
         "is_dst": false
