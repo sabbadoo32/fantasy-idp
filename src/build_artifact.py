@@ -19,6 +19,7 @@ FRAMES = [
     ("RB", "Brian Robinson", "RB", "BAL"), ("WR", "Kalif Raymond", "WR", "GB"),
     ("WR", "Keon Coleman", "WR", "LAR"), ("WR", "Jalen Brooks", "WR", "DET"),
     ("TE", "T.J. Hockenson", "TE", "NO"), ("W/R", "Keaton Mitchell", "RB", "DEN"),
+    ("DEF", "Bengals", "DEF", "MIA"),
     ("DL", "David Bailey", "IDP-DL", "CLE"), ("DL", "Chase Young", "IDP-DL", "MIN"),
     ("LB", "Blake Cashman", "IDP-LB", "NO"), ("LB", "Arvell Reese", "IDP-LB", "WAS"),
     ("DB", "Quentin Lake", "IDP-DB", "BUF"), ("DB", "Talanoa Hufanga", "IDP-DB", "LAC"),
@@ -42,6 +43,13 @@ def _build_frames(data):
     out = []
     for slot, name, grp, opp in FRAMES:
         d = by.get(opp)
+        if grp == "DEF":                       # DST streams on what the opponent OFFENSE yields
+            da = d.get("dst_against") if d else None
+            f = {"slot": slot, "name": name, "grp": grp, "opp": opp,
+                 "allowed": (da["pts"] if da else None), "rank": (da["rank"] if da else None),
+                 "levels": None}
+            out.append(f)
+            continue
         f = {"slot": slot, "name": name, "grp": grp, "opp": opp,
              "allowed": (d["allowed"].get(grp) if d else None),
              "rank": (d["rank"].get(grp) if d else None),
@@ -164,7 +172,7 @@ th.sorted::after{content:" ▾";color:var(--accent)}
 <script>
 const DATA = __DATA__;
 const POS = DATA.positions;
-const LABEL = {"QB":"QB","RB":"RB","WR":"WR","TE":"TE","K":"K","IDP-DL":"DL","IDP-LB":"LB","IDP-DB":"DB"};
+const LABEL = {"QB":"QB","RB":"RB","WR":"WR","TE":"TE","K":"K","IDP-DL":"DL","IDP-LB":"LB","IDP-DB":"DB","DEF":"DST","KR":"KR","DST":"DST"};
 const mineByTeamPos = {};
 (DATA.team_week5||[]).forEach(f=>{ mineByTeamPos[f.opp+"|"+f.grp]=f; });
 
@@ -185,7 +193,7 @@ const fr = document.getElementById("frames");
   const badge = ret? ` <span class="krtag">KR</span>` : "";
   d.innerHTML=`<div class="slot">${f.slot} · ${LABEL[f.grp]||f.grp}${badge}</div>
     <div class="name">${f.name}</div>
-    <div class="vs">vs ${f.opp} defense</div>
+    <div class="vs">vs ${f.opp}${f.grp==="DEF"?" offense":" defense"}</div>
     <div class="val"><span>${val}<span style="color:var(--muted)">/g</span></span>${rk}</div>
     ${krLine}`;
   fr.appendChild(d);
@@ -193,15 +201,20 @@ const fr = document.getElementById("frames");
 
 /* grid */
 let rbMode="total", sortCol="WR", sortDir=-1, filter="";
-const GRIDCOLS = POS.concat(["KR"]);   // all positions + the kick-return axis
+const GRIDCOLS = POS.concat(["KR","DST"]);   // all positions + kick-return + stream-a-D axis
 function cellValue(def,pos){
   if(pos==="KR") return def.returns? def.returns.kr_yds : null;
+  if(pos==="DST") return def.dst_against? def.dst_against.pts : null;  // DST pts this offense yields
   if(pos==="RB" && rbMode!=="total"){
     const lv=def.levels||{}; return rbMode==="ground"? lv.rb_ground : lv.rb_air;
   }
   return def.allowed[pos];
 }
-function rankFor(def,pos){ return pos==="KR" ? (def.returns? def.returns.kr_rank : null) : def.rank[pos]; }
+function rankFor(def,pos){
+  if(pos==="KR") return def.returns? def.returns.kr_rank : null;
+  if(pos==="DST") return def.dst_against? def.dst_against.rank : null;
+  return def.rank[pos];
+}
 function colorFor(rank){ // rank 1..32 -> green..red via blend of theme tokens
   if(rank==null) return "transparent";
   const t=(rank-1)/31;            // 0 generous .. 1 stingy
@@ -224,7 +237,9 @@ function render(){
   tbody.innerHTML=rows.map(d=>{
     const tds=GRIDCOLS.map(p=>{
       const v=cellValue(d,p); const rank=rankFor(d,p);
-      const mine = p==="KR" ? retMine.has(d.team) : mineByTeamPos[d.team+"|"+p];
+      const mine = p==="KR" ? retMine.has(d.team)
+                 : p==="DST" ? dstMine.has(d.team)
+                 : mineByTeamPos[d.team+"|"+p];
       const bg = (p==="RB"&&rbMode!=="total")? "transparent" : colorFor(rank);
       const rk = (p==="RB"&&rbMode!=="total")? "" : (rank!=null?`<span class='r'>#${rank}</span>`:"");
       return `<td class='${mine?"mine":""}' style='background:${bg}'>${v==null?"—":v.toFixed(0)}${rk}</td>`;
@@ -242,6 +257,7 @@ document.getElementById("rbmode").addEventListener("click",e=>{
   rbMode=b.dataset.m; [...e.currentTarget.children].forEach(x=>x.setAttribute("aria-pressed",x===b));
   if(rbMode!=="total"){sortCol="RB";sortDir=-1;} render();
 });
+const dstMine = new Set((DATA.team_week5||[]).filter(f=>f.grp==="DEF").map(f=>f.opp));
 /* return matchups table */
 const retMine = new Set((DATA.team_week5||[]).filter(f=>f.returner).map(f=>f.opp));
 let retSort="kr_yds", retDir=-1;
@@ -270,7 +286,8 @@ renderRet();
 
 document.getElementById("foot").innerHTML =
   "Points allowed = sum of every opposing player's league-scored output at that position, per game, through Week "+DATA.through_week+
-  ". KR = kickoff-return yards allowed per game (1 pt/yd here) — the axis a return specialist scores on. "+
+  ". KR = kickoff-return yards allowed per game (1 pt/yd here). DST = team-defense points that team's OFFENSE "+
+  "yields per game (turnovers, sacks, 3-and-outs, return yards surrendered) — the axis to stream a defense on. "+
   "Ground / air split RB points into rushing vs receiving — a soft second level shows up as high RB air. "+
   "IDP columns are position-group totals and run noisier than skill positions. Source: nflverse, live each run.";
 render();

@@ -24,11 +24,31 @@ def load_roster():
     rows = []
     for slot, ps in r["starters"].items():
         for p in ps:
-            rows.append({"key": std_name(p["name"]), "name": p["name"], "slot": slot, "role": "start"})
+            rows.append({"key": std_name(p["name"]), "name": p["name"], "slot": slot,
+                         "role": "start", "roster_team": p.get("team")})
     for role in ("bench", "ir"):
         for p in r.get(role, []):
-            rows.append({"key": std_name(p["name"]), "name": p["name"], "slot": role.upper(), "role": role})
+            rows.append({"key": std_name(p["name"]), "name": p["name"], "slot": role.upper(),
+                         "role": role, "roster_team": p.get("team")})
     return pd.DataFrame(rows)
+
+
+def dst_table(season, through):
+    """Team DST season-to-date at league scoring: PPG, L2, games, rank by team."""
+    tp = ROOT / "data" / f"stats_team_week_{season}.parquet"
+    if not tp.exists():
+        return None
+    from scoring import score_team_dst
+    tw = pd.read_parquet(tp)
+    tw = tw[tw["week"] <= through]
+    pp = ROOT / "data" / f"pbp_{season}.parquet"
+    pbp = pd.read_parquet(pp) if pp.exists() else None
+    d = score_team_dst(tw, pbp)
+    g = d.groupby("team").agg(games=("pts_dst", "size"),
+                              ppg=("pts_dst", "mean"),
+                              l2=("pts_dst", lambda s: s.tail(2).mean())).round(1)
+    g["rank"] = g["ppg"].rank(ascending=False).astype(int)
+    return g
 
 def snaps(season, through):
     p = ROOT / "data" / f"snap_counts_{season}.parquet"
@@ -149,9 +169,14 @@ def main(season=None, week=None):
     out.append("## Your roster\n")
     out.append("| Slot | Player | PPG | L2 | Snap | Pos rank | Flags |\n|---|---|---|---|---|---|---|")
     order = {s: i for i, s in enumerate(list(SLOT_GRP) + ["W/T", "W/R", "DEF", "BENCH", "IR"])}
+    dstt = dst_table(season, week)
     for _, x in mine.sort_values(by="slot", key=lambda s: s.map(order).fillna(99)).iterrows():
+        if x["slot"] == "DEF" and dstt is not None and x.get("roster_team") in dstt.index:
+            r = dstt.loc[x["roster_team"]]
+            out.append(f"| DEF | {x['name']} | {r['ppg']} | {r['l2']} | - | DST #{int(r['rank'])} | |")
+            continue
         if pd.isna(x.get("ppg")):
-            out.append(f"| {x['slot']} | {x['name']} | - | - | - | no stats (DEF not scored yet, or no games) | |")
+            out.append(f"| {x['slot']} | {x['name']} | - | - | - | no games yet | |")
             continue
         l2 = "-" if pd.isna(x["l2"]) else x["l2"]
         out.append(f"| {x['slot']} | {x['name']} | {x['ppg']} | {l2} | {fmt_snap(x)} | {x['grp']} #{int(x['pos_rank'])} | {flags(x, week)} |")
@@ -197,6 +222,16 @@ def main(season=None, week=None):
             if delta is not None and delta >= EDGE:
                 adds.append((delta, grp, x, fl))
 
+    # --- DST streaming watch (DST is a WR1-sized category in this league)
+    if dstt is not None:
+        mine_def = set(mine[mine["slot"].isin(["DEF", "BENCH"])]["roster_team"].dropna())
+        top = dstt.sort_values("ppg", ascending=False).head(8)
+        out.append("\n## DST watch — top team defenses to date (yours marked ★)\n")
+        out.append("| Team | DST PPG | L2 | Rank |\n|---|---|---|---|")
+        for tm, r in top.iterrows():
+            mark = " ★" if tm in mine_def else ""
+            out.append(f"| {tm}{mark} | {r['ppg']} | {r['l2']} | #{int(r['rank'])} |")
+
     # --- recommendation
     out.append("\n## Recommended adds\n")
     if not adds:
@@ -204,7 +239,7 @@ def main(season=None, week=None):
     for delta, grp, x, fl in sorted(adds, key=lambda a: -a[0])[:6]:
         out.append(f"- **{x['player_display_name']}** ({x['team']}, {grp}) over {fl[0]}: "
                    f"{x['ppg']} vs {fl[1]} PPG ({delta:+}), {int(x['games'])} games, L2 {x['l2']}, snap {fmt_snap(x)}. {flags(x, week)}")
-    out.append("\nNot accounted for: byes, Week " + str(week + 1) + " matchups, team DEF scoring. "
+    out.append("\nNot accounted for: byes, Week " + str(week + 1) + " matchups. "
                "Injury news newer than the nflverse feed — check each name.")
 
     dst = ROOT / "reports"; dst.mkdir(exist_ok=True)

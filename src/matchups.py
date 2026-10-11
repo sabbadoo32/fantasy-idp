@@ -115,6 +115,26 @@ def player_returns(season=None, through=None, min_ypg=25.0):
     return out
 
 
+def _dst_against(season, through):
+    """DST points each team's offense yields, per game — the axis to stream a D on.
+    = average league-scored DST output by defenses that faced this offense. (Series, ranks)."""
+    tp = ROOT / "data" / f"stats_team_week_{season}.parquet"
+    pp = ROOT / "data" / f"pbp_{season}.parquet"
+    if not tp.exists():
+        return None, None
+    from scoring import score_team_dst
+    tw = pd.read_parquet(tp)
+    tw = tw[tw["week"] <= through].copy()
+    pbp = pd.read_parquet(pp) if pp.exists() else None
+    if pbp is not None:
+        pbp = pbp[pbp["week"] <= through]
+    dst = score_team_dst(tw, pbp)
+    dst["opp"] = dst["opp"].replace(TEAM_FIX)
+    yielded = dst.groupby("opp")["pts_dst"].mean().round(1)   # opp = the offense attacked
+    ranks = yielded.rank(ascending=False)                     # #1 = most generous to DSTs
+    return yielded, ranks
+
+
 def build_grid(season=None, through=None):
     cfg = load_scoring()
     season = _latest(season)
@@ -154,6 +174,10 @@ def build_grid(season=None, through=None):
 
     ret, ret_ranks = _returns_allowed(season, through_full)
 
+    # DST matchup: how many DST points each team's OFFENSE yields to the defense facing it
+    # (turnovers, sacks, 3-and-outs, return yards surrendered). You stream a D on this axis.
+    dst_against, dst_rank = _dst_against(season, through_full)
+
     defenses = sorted(grid.index)
     payload = {
         "season": season, "through_week": through_full,
@@ -180,6 +204,10 @@ def build_grid(season=None, through=None):
             }
         else:
             row["returns"] = None
+        if dst_against is not None and d in dst_against.index:
+            row["dst_against"] = {"pts": float(dst_against[d]), "rank": int(dst_rank[d])}
+        else:
+            row["dst_against"] = None
         payload["defenses"].append(row)
     return payload
 

@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "through_week": 4,
-  "generated": "2026-10-11 11:14",
+  "generated": "2026-10-11 11:36",
   "positions": [
     "QB",
     "RB",
@@ -46,6 +46,10 @@
         "ret_yds": 98.3,
         "kr_rank": 29,
         "ret_rank": 28
+      },
+      "dst_against": {
+        "pts": 227.8,
+        "rank": 25
       }
     },
     {
@@ -81,6 +85,10 @@
         "ret_yds": 145.0,
         "kr_rank": 5,
         "ret_rank": 7
+      },
+      "dst_against": {
+        "pts": 300.8,
+        "rank": 6
       }
     },
     {
@@ -116,6 +124,10 @@
         "ret_yds": 126.7,
         "kr_rank": 11,
         "ret_rank": 11
+      },
+      "dst_against": {
+        "pts": 227.8,
+        "rank": 25
       }
     },
     {
@@ -151,6 +163,10 @@
         "ret_yds": 150.0,
         "kr_rank": 4,
         "ret_rank": 4
+      },
+      "dst_against": {
+        "pts": 269.2,
+        "rank": 15
       }
     },
     {
@@ -186,6 +202,10 @@
         "ret_yds": 113.3,
         "kr_rank": 16,
         "ret_rank": 22
+      },
+      "dst_against": {
+        "pts": 258.0,
+        "rank": 18
       }
     },
     {
@@ -221,6 +241,10 @@
         "ret_yds": 94.5,
         "kr_rank": 27,
         "ret_rank": 29
+      },
+      "dst_against": {
+        "pts": 233.2,
+        "rank": 24
       }
     },
     {
@@ -256,6 +280,10 @@
         "ret_yds": 138.0,
         "kr_rank": 8,
         "ret_rank": 8
+      },
+      "dst_against": {
+        "pts": 289.8,
+        "rank": 9
       }
     },
     {
@@ -291,6 +319,10 @@
         "ret_yds": 123.0,
         "kr_rank": 14,
         "ret_rank": 15
+      },
+      "dst_against": {
+        "pts": 282.8,
+        "rank": 10
       }
     },
     {
@@ -326,6 +358,10 @@
         "ret_yds": 107.7,
         "kr_rank": 20,
         "ret_rank": 23
+      },
+      "dst_against": {
+        "pts": 194.8,
+        "rank": 29
       }
     },
     {
@@ -361,6 +397,10 @@
         "ret_yds": 103.4,
         "kr_rank": 24,
         "ret_rank": 26
+      },
+      "dst_against": {
+        "pts": 191.2,
+        "rank": 30
       }
     },
     {
@@ -396,6 +436,10 @@
         "ret_yds": 124.7,
         "kr_rank": 13,
         "ret_rank": 14
+      },
+      "dst_against": {
+        "pts": 226.5,
+        "rank": 27
       }
     },
     {
@@ -431,6 +475,10 @@
         "ret_yds": 107.3,
         "kr_rank": 22,
         "ret_rank": 24
+      },
+      "dst_against": {
+        "pts": 277.8,
+        "rank": 13
       }
     },
     {
@@ -466,6 +514,10 @@
         "ret_yds": 125.7,
         "kr_rank": 17,
         "ret_rank": 12
+      },
+      "dst_against": {
+        "pts": 279.8,
+        "rank": 11
       }
     },
     {
@@ -501,6 +553,10 @@
         "ret_yds": 170.3,
         "kr_rank": 1,
         "ret_rank": 1
+      },
+      "dst_against": {
+        "pts": 307.2,
+        "rank": 4
       }
     },
     {
@@ -536,6 +592,10 @@
         "ret_yds": 161.5,
         "kr_rank": 2,
         "ret_rank": 2
+      },
+      "dst_against": {
+        "pts": 252.0,
+        "rank": 20
       }
     },
     {
@@ -571,6 +631,10 @@
         "ret_yds": 155.0,
         "kr_rank": 3,
         "ret_rank": 3
+      },
+      "dst_against": {
+        "pts": 257.2,
+        "rank": 19
       }
     },
     {
@@ -606,6 +670,10 @@
         "ret_yds": 78.8,
         "kr_rank": 31,
         "ret_rank": 31
+      },
+      "dst_against": {
+        "pts": 317.5,
+        "rank": 3
       }
     },
     {
@@ -641,6 +709,10 @@
         "ret_yds": 116.6,
         "kr_rank": 26,
         "ret_rank": 19
+      },
+      "dst_against": {
+        "pts": 278.8,
+        "rank": 12
       }
     },
     {
@@ -676,6 +748,10 @@
         "ret_yds": 125.0,
         "kr_rank": 11,
         "ret_rank": 13
+      },
+      "dst_against": {
+        "pts": 244.8,
+        "rank": 23
       }
     },
     {
@@ -711,6 +787,10 @@
         "ret_yds": 92.8,
         "kr_rank": 30,
         "ret_rank": 30
+      },
+      "dst_against": {
+        "pts": 261.0,
+        "rank": 17
       }
     },
     {
@@ -746,6 +826,10 @@
         "ret_yds": 147.0,
         "kr_rank": 7,
         "ret_rank": 6
+      },
+      "dst_against": {
+        "pts": 275.8,
+        "rank": 14
       }
     },
     {
@@ -781,6 +865,10 @@
         "ret_yds": 106.7,
         "kr_rank": 21,
         "ret_rank": 25
+      },
+      "dst_against": {
+        "pts": 293.0,
+        "rank": 8
       }
     },
     {
@@ -816,6 +904,10 @@
         "ret_yds": 103.2,
         "kr_rank": 28,
         "ret_rank": 27
+      },
+      "dst_against": {
+        "pts": 296.0,
+        "rank": 7
       }
     },
     {
@@ -851,6 +943,10 @@
         "ret_yds": 120.7,
         "kr_rank": 18,
         "ret_rank": 17
+      },
+      "dst_against": {
+        "pts": 265.2,
+        "rank": 16
       }
     },
     {
@@ -886,6 +982,10 @@
         "ret_yds": 116.5,
         "kr_rank": 25,
         "ret_rank": 21
+      },
+      "dst_against": {
+        "pts": 247.5,
+        "rank": 22
       }
     },
     {
@@ -921,6 +1021,10 @@
         "ret_yds": 120.8,
         "kr_rank": 23,
         "ret_rank": 16
+      },
+      "dst_against": {
+        "pts": 327.2,
+        "rank": 2
       }
     },
     {
@@ -956,6 +1060,10 @@
         "ret_yds": 129.6,
         "kr_rank": 15,
         "ret_rank": 10
+      },
+      "dst_against": {
+        "pts": 306.5,
+        "rank": 5
       }
     },
     {
@@ -991,6 +1099,10 @@
         "ret_yds": 117.8,
         "kr_rank": 9,
         "ret_rank": 18
+      },
+      "dst_against": {
+        "pts": 250.0,
+        "rank": 21
       }
     },
     {
@@ -1026,6 +1138,10 @@
         "ret_yds": 136.7,
         "kr_rank": 6,
         "ret_rank": 9
+      },
+      "dst_against": {
+        "pts": 165.8,
+        "rank": 31
       }
     },
     {
@@ -1061,6 +1177,10 @@
         "ret_yds": 148.4,
         "kr_rank": 10,
         "ret_rank": 5
+      },
+      "dst_against": {
+        "pts": 387.0,
+        "rank": 1
       }
     },
     {
@@ -1096,6 +1216,10 @@
         "ret_yds": 42.0,
         "kr_rank": 32,
         "ret_rank": 32
+      },
+      "dst_against": {
+        "pts": 161.8,
+        "rank": 32
       }
     },
     {
@@ -1131,6 +1255,10 @@
         "ret_yds": 116.6,
         "kr_rank": 19,
         "ret_rank": 19
+      },
+      "dst_against": {
+        "pts": 216.5,
+        "rank": 28
       }
     }
   ]
