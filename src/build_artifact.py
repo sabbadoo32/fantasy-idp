@@ -193,12 +193,15 @@ const fr = document.getElementById("frames");
 
 /* grid */
 let rbMode="total", sortCol="WR", sortDir=-1, filter="";
+const GRIDCOLS = POS.concat(["KR"]);   // all positions + the kick-return axis
 function cellValue(def,pos){
+  if(pos==="KR") return def.returns? def.returns.kr_yds : null;
   if(pos==="RB" && rbMode!=="total"){
     const lv=def.levels||{}; return rbMode==="ground"? lv.rb_ground : lv.rb_air;
   }
   return def.allowed[pos];
 }
+function rankFor(def,pos){ return pos==="KR" ? (def.returns? def.returns.kr_rank : null) : def.rank[pos]; }
 function colorFor(rank){ // rank 1..32 -> green..red via blend of theme tokens
   if(rank==null) return "transparent";
   const t=(rank-1)/31;            // 0 generous .. 1 stingy
@@ -209,7 +212,7 @@ function colorFor(rank){ // rank 1..32 -> green..red via blend of theme tokens
 }
 function render(){
   const thead=document.querySelector("#grid thead"), tbody=document.querySelector("#grid tbody");
-  thead.innerHTML="<tr><th data-c='team'>Defense</th>"+POS.map(p=>{
+  thead.innerHTML="<tr><th data-c='team'>Defense</th>"+GRIDCOLS.map(p=>{
     const lab = p==="RB" && rbMode!=="total" ? "RB "+rbMode : (LABEL[p]||p);
     return `<th data-c='${p}' class='${p===sortCol?"sorted":""}'>${lab}</th>`;
   }).join("")+"</tr>";
@@ -219,9 +222,9 @@ function render(){
     const va=cellValue(a,sortCol)??-1, vb=cellValue(b,sortCol)??-1; return (va-vb)*sortDir;
   });
   tbody.innerHTML=rows.map(d=>{
-    const tds=POS.map(p=>{
-      const v=cellValue(d,p); const rank=d.rank[p];
-      const mine = mineByTeamPos[d.team+"|"+p];
+    const tds=GRIDCOLS.map(p=>{
+      const v=cellValue(d,p); const rank=rankFor(d,p);
+      const mine = p==="KR" ? retMine.has(d.team) : mineByTeamPos[d.team+"|"+p];
       const bg = (p==="RB"&&rbMode!=="total")? "transparent" : colorFor(rank);
       const rk = (p==="RB"&&rbMode!=="total")? "" : (rank!=null?`<span class='r'>#${rank}</span>`:"");
       return `<td class='${mine?"mine":""}' style='background:${bg}'>${v==null?"—":v.toFixed(0)}${rk}</td>`;
@@ -267,8 +270,9 @@ renderRet();
 
 document.getElementById("foot").innerHTML =
   "Points allowed = sum of every opposing player's league-scored output at that position, per game, through Week "+DATA.through_week+
-  ". Ground / air split RB points into rushing vs receiving — a soft second level shows up as high RB air. "+
-  "IDP columns are position-group totals and run noisier than skill positions. Source: nflverse. Not self-updating — regenerated weekly.";
+  ". KR = kickoff-return yards allowed per game (1 pt/yd here) — the axis a return specialist scores on. "+
+  "Ground / air split RB points into rushing vs receiving — a soft second level shows up as high RB air. "+
+  "IDP columns are position-group totals and run noisier than skill positions. Source: nflverse, live each run.";
 render();
 </script>
 """
