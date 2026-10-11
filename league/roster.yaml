@@ -1,0 +1,33 @@
+# Team "Team Work" (manager sabbadoo32, since '09) — league 672352.
+# Synced from the live Yahoo team page (team id 1) on 2026-10-11 (Week 5 in progress).
+# Reflects today's start/sit: Jalen Brooks active at WR3 (KR specialist), Vele benched.
+# Quote "NO" in YAML — bare NO parses as false.
+
+lineup_slots: [QB, RB, RB, WR, WR, WR, TE, W/T, W/R, K, DEF, DB, DB, DB, DL, DL, DL, LB, LB, LB]
+
+starters:
+  QB:  [{name: Aaron Rodgers, team: PIT}]
+  RB:  [{name: Jahmyr Gibbs, team: DET}, {name: Brian Robinson, team: ATL}]
+  WR:  [{name: Kalif Raymond, team: CHI}, {name: Keon Coleman, team: BUF}, {name: Jalen Brooks, team: ARI, note: "KR specialist — scored on return yards"}]
+  TE:  [{name: T.J. Hockenson, team: MIN}]
+  "W/T": [{name: George Pickens, team: DAL, pos: WR}]
+  "W/R": [{name: Keaton Mitchell, team: LAC, pos: RB}]
+  K:   [{name: Matt Gay, team: LV}]
+  DEF: [{name: Bengals, team: CIN}]
+  DB:  [{name: Quentin Lake, team: LAR, pos: S}, {name: Talanoa Hufanga, team: DEN, pos: S}, {name: Hezekiah Masses, team: LV, pos: CB}]
+  DL:  [{name: Jaishawn Barham, team: DAL, pos: "LB/DE"}, {name: David Bailey, team: NYJ, pos: "LB/DE"}, {name: Chase Young, team: "NO", pos: DE}]
+  LB:  [{name: Blake Cashman, team: MIN, pos: LB}, {name: Arvell Reese, team: NYG, pos: LB}, {name: Josiah Trotter, team: TB, pos: LB}]
+
+bench:
+  - {name: DJ Moore, team: BUF, pos: WR, status: Q}
+  - {name: Josh Downs, team: IND, pos: WR}
+  - {name: Bryce Young, team: CAR, pos: QB}
+  - {name: Devaughn Vele, team: "NO", pos: WR}
+  - {name: Bears, team: CHI, pos: DEF}
+  - {name: Jihaad Campbell, team: PHI, pos: LB}
+
+ir:
+  - {name: A.J. Brown, team: NE, pos: WR, status: IR}
+  - {name: Zach Charbonnet, team: SEA, pos: RB, status: PUP-R}
+
+record: {w: 0, l: 4, t: 0, place: 11, total_points: 7463}

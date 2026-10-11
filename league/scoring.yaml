@@ -1,0 +1,65 @@
+# Yahoo League 672352 — "1 Point per Yard" IDP scoring.
+# Captured 2026-09-19 from editstatcategories. Verified against a real box score.
+# Values are points per unit unless noted.
+
+offense:
+  passing_yards: 1.0        # 1 pt / yard
+  passing_tds: 6
+  interceptions: -35        # thrown INT
+  passing_2pt: 2
+  rushing_yards: 1.0
+  rushing_attempts: 1       # 1 pt / carry
+  rushing_tds: 6
+  rushing_first_downs: 5
+  rushing_2pt: 2
+  receiving_yards: 1.0
+  receptions: 1             # full PPR
+  receiving_tds: 6
+  receiving_first_downs: 5
+  receiving_2pt: 2
+  fumbles_lost: -35
+  return_yards: 1.0
+  return_td: 6
+  off_fumble_return_td: 6
+  # stacking yardage bonuses (each threshold adds on top)
+  bonus_passing: {300: 3, 400: 4, 500: 5}
+  bonus_rushing: {200: 3, 225: 4, 250: 5}
+  bonus_receiving: {200: 3, 250: 4, 300: 5}
+  # OFF: passing_first_downs (not scored), passing_attempts, completions, sacks
+
+kicker:
+  fg_made_each: 3           # all distances (0-19..50+) score 3; 50-59/60+ buckets off but 50+ = 3
+  fg_total_yards: 1.0       # 1 pt / yard of made FGs
+  pat_made: 1
+  # OFF: all FG-missed penalties, PAT missed
+
+idp:                        # individual defensive players
+  tackle_solo: 15
+  tackle_assist: 10
+  sack: 20
+  tackle_for_loss: 20
+  interception: 35
+  fumble_force: 35
+  fumble_recovery: 20
+  pass_defended: 15
+  def_td: 6
+  safety: 2
+  block_kick: 35
+  turnover_return_yards: 1.0
+  xp_returned: 2
+
+team_dst:                   # team defense/special teams (Buccaneers is a starter)
+  sack: 25
+  interception: 25
+  fumble_recovery: 25
+  td: 6
+  safety: 2
+  block_kick: 25
+  return_yards: 1.0
+  return_td: 6
+  fourth_down_stop: 25
+  tackle_for_loss: 5
+  three_and_out: 1
+  xp_returned: 2
+  points_allowed: {0: 10, "1-6": 7, "7-13": 4, "14-20": 1, "21-27": 0, "28-34": -10, "35+": -25}
+  yards_allowed: {"neg": 10, "0-99": 0, "100-199": 3, "200-299": 5, "300-399": 7, "400-499": 9, "500+": 10}

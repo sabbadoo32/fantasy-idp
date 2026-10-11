@@ -1,0 +1,10 @@
+# Local Python env (per-machine; the committed one had broken symlinks). Rebuild with venv.
+.venv/
+__pycache__/
+*.pyc
+
+# NOTE: data/ snapshots and reports/ ARE tracked on purpose — the git history of the weekly
+# data pull is this project's season-long tracking record (see README + CLAUDE.md).
+
+# macOS
+.DS_Store
