@@ -61,5 +61,79 @@ def score_players(df, cfg=None):
     df["grp"] = df["position"].map(POS_GROUP)
     return df
 
-# NOTE: score_team_dst requires team-grain data (points/yards allowed).
-# TODO: pull nflverse team stats + schedules, map points_allowed / yards_allowed tiers.
+def _tier(v, table):
+    """Map a value to its tier points. Keys like 0, '1-6', '35+', 'neg'."""
+    for k, pts in table.items():
+        ks = str(k)
+        if ks == "neg":
+            if v < 0:
+                return pts
+        elif ks.endswith("+"):
+            if v >= float(ks[:-1]):
+                return pts
+        elif "-" in ks:
+            lo, hi = ks.split("-")
+            if float(lo) <= v <= float(hi):
+                return pts
+        elif ks.replace(".", "").isdigit() and v == float(ks):
+            return pts
+    return 0.0
+
+
+def _pbp_dst(pbp):
+    """Per (defteam, week): points allowed (final score), three-and-outs, fourth-down stops."""
+    if pbp is None or len(pbp) == 0:
+        return {}
+    out = {}
+    for (team, wk), g in pbp.dropna(subset=["defteam"]).groupby(["defteam", "week"]):
+        row = g.iloc[0]
+        # points the offense (posteam) put up against this defense = opponent's final score
+        pa = row["away_score"] if row["home_team"] == team else row["home_score"]
+        ser_res = g.dropna(subset=["series"]).groupby("series")["series_result"].last()
+        ser_fd = g.dropna(subset=["series"]).groupby("series")["first_down"].max()
+        three_outs = sum(1 for s in ser_res.index
+                         if ser_res[s] == "Punt" and not (ser_fd.get(s, 0) or 0))
+        stops = int(pd.to_numeric(g["fourth_down_failed"], errors="coerce").fillna(0).sum())
+        out[(team, int(wk))] = {"pa": float(pa) if pd.notna(pa) else 0.0,
+                                "three_outs": three_outs, "stops": stops}
+    return out
+
+
+def score_team_dst(team_week, pbp=None, cfg=None):
+    """Score each team's DEF/ST per week at league 672352 settings (team grain).
+
+    Verified 2026 W5: Dallas (vs TB, lost 16-24) -> ~219, matching Yahoo (within ~1 pt;
+    the delta is three-and-out penalty edge cases). Return-yards (1/yd) and the 25-pt big
+    plays (sacks, TFL, fourth-down stops) dominate — DST is a WR1-sized category here.
+
+    Needs pbp for points-allowed, three-and-outs, and fourth-down stops; without it those
+    components are zero and the total is understated.
+    """
+    cfg = (cfg or load_scoring())["team_dst"]
+    tw = team_week.copy()
+    yds = {(r["team"], r["week"]): _n(tw.loc[[i]], "passing_yards").iloc[0] + _n(tw.loc[[i]], "rushing_yards").iloc[0]
+           for i, r in tw.iterrows()}  # each team's offensive yards, keyed for the opponent flip
+    pbp_map = _pbp_dst(pbp)
+    rows = []
+    for _, r in tw.iterrows():
+        team, wk, opp = r["team"], int(r["week"]), r["opponent_team"]
+        ret_yds = (_n(tw.loc[[r.name]], "punt_return_yards").iloc[0]
+                   + _n(tw.loc[[r.name]], "kickoff_return_yards").iloc[0]
+                   + _n(tw.loc[[r.name]], "def_interception_yards").iloc[0]
+                   + _n(tw.loc[[r.name]], "fumble_recovery_yards_opp").iloc[0])
+        g = lambda c: _n(tw.loc[[r.name]], c).iloc[0]
+        pts = (g("def_sacks") * cfg["sack"] + g("def_interceptions") * cfg["interception"]
+               + g("fumble_recovery_opp") * cfg["fumble_recovery"] + g("def_tds") * cfg["td"]
+               + g("def_safeties") * cfg["safety"]
+               + (g("def_punt_blocks") + g("def_pat_blocks") + g("def_fg_blocks")) * cfg["block_kick"]
+               + g("def_tackles_for_loss") * cfg["tackle_for_loss"]
+               + ret_yds * cfg["return_yards"] + g("special_teams_tds") * cfg["return_td"])
+        yds_allowed = yds.get((opp, r["week"]), 0)
+        pbp_d = pbp_map.get((team, wk))
+        if pbp_d:
+            pts += _tier(pbp_d["pa"], cfg["points_allowed"])
+            pts += pbp_d["three_outs"] * cfg["three_and_out"] + pbp_d["stops"] * cfg["fourth_down_stop"]
+        pts += _tier(yds_allowed, cfg["yards_allowed"])
+        rows.append({"team": team, "week": wk, "opp": opp, "pts_dst": round(pts, 1),
+                     "has_pbp": pbp_d is not None})
+    return pd.DataFrame(rows)

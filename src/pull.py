@@ -35,6 +35,16 @@ def pull(season):
         print(f"{season}: team stats, {len(tm)} rows, weeks {wks[:1]}..{wks[-1:]}")
     except Exception as e:  # team grain powers matchups + DST, not player scoring
         print(f"{season}: team stats unavailable ({e})")
+    # play-by-play (slim): powers Team DST — points allowed (final scores), three-and-outs,
+    # and fourth-down stops, none of which are in the team-week aggregate.
+    try:
+        pbp_cols = ["week", "posteam", "defteam", "series", "series_result", "first_down",
+                    "fourth_down_failed", "home_team", "away_team", "home_score", "away_score"]
+        pbp = pd.read_parquet(REL + f"pbp/play_by_play_{season}.parquet", columns=pbp_cols)
+        pbp.to_parquet(DATA / f"pbp_{season}.parquet")
+        print(f"{season}: pbp (slim), {len(pbp)} rows")
+    except Exception as e:  # DST needs this; player/matchup scoring does not
+        print(f"{season}: pbp unavailable ({e})")
     # injury status: official weekly injury reports + weekly roster status (RES = IR/PUP/NFI)
     for name, url in [("injuries", f"injuries/injuries_{season}.parquet"),
                       ("roster_weekly", f"weekly_rosters/roster_weekly_{season}.parquet")]:
