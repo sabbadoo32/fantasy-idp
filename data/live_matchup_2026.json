@@ -2,10 +2,10 @@
   "season": 2026,
   "week": 5,
   "source": "Sleeper live + ESPN state",
-  "generated": "2026-10-11 14:06",
+  "generated": "2026-10-11 14:21",
   "me": {
     "name": "Team Work",
-    "total": 1176.0,
+    "total": 1235.0,
     "pending": 7,
     "in_progress": 10,
     "starters": [
@@ -92,7 +92,7 @@
       {
         "slot": "DEF",
         "name": "Bengals",
-        "pts": 200.0,
+        "pts": 244.0,
         "played": true,
         "live": true,
         "is_dst": true
@@ -148,7 +148,7 @@
       {
         "slot": "LB",
         "name": "Blake Cashman",
-        "pts": 95.0,
+        "pts": 110.0,
         "played": true,
         "live": true,
         "is_dst": false
@@ -173,7 +173,7 @@
   },
   "opp": {
     "name": "OREGON DUCKS",
-    "total": 991.0,
+    "total": 1041.0,
     "pending": 9,
     "in_progress": 4,
     "starters": [
@@ -332,7 +332,7 @@
       {
         "slot": "LB",
         "name": "Payton Wilson",
-        "pts": 110.0,
+        "pts": 160.0,
         "played": true,
         "live": true,
         "is_dst": false
