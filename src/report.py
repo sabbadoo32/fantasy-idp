@@ -139,7 +139,11 @@ def main(season=None, week=None):
     if season is None:
         season = max(int(p.stem.split("_")[-1]) for p in (ROOT / "data").glob("stats_player_week_*.parquet"))
     df = pd.read_parquet(ROOT / "data" / f"stats_player_week_{season}.parquet")
-    week = week or int(df["week"].max())
+    if week is None:
+        # The pull can include the live week partially (Sunday games in progress); ranking on
+        # it skews season-to-date. Default to the last full slate (matchups.py's guard).
+        from matchups import _last_complete_week
+        week = _last_complete_week(season, int(df["week"].max()))
     agg = season_table(df, week)
     sn = snaps(season, week)
     if sn is not None:
