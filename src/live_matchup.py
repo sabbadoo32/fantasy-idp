@@ -11,8 +11,8 @@ Not self-updating: re-run after a fresh pull to refresh. Usage:
 import sys, json, pathlib
 import pandas as pd, yaml
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from scoring import score_players, score_team_dst
 from availability import std_name
+from live_source import live_week
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -23,44 +23,37 @@ def _starters(doc):
             yield slot, p["name"], p.get("team"), slot == "DEF"
 
 
-def _score_side(doc, name, pts_by_key, dst_by_team, played_keys, dst_teams):
-    rows, total, pending = [], 0.0, 0
+def _score_side(doc, name, lw):
+    """Score one lineup off the live feed. 'in'/'post' games show live/final points;
+    'pre' (not kicked off) shows as still to play."""
+    rows, total, pending, live = [], 0.0, 0, 0
     for slot, pname, team, is_dst in _starters(doc):
-        if is_dst:
-            pts = float(dst_by_team.get(team, 0.0)); played = team in dst_teams
-        else:
-            pts = float(pts_by_key.get(std_name(pname), 0.0)); played = std_name(pname) in played_keys
+        pts = float(lw["dst_pts"].get(team, 0.0)) if is_dst else float(lw["player_pts"].get(std_name(pname), 0.0))
+        state = lw["state"].get(team)            # pre | in | post | None
+        playing = state in ("in", "post")
         total += pts
-        pending += 0 if played else 1
+        pending += 0 if playing else 1
+        live += 1 if state == "in" else 0
         rows.append({"slot": slot, "name": pname, "pts": round(pts, 1),
-                     "played": played, "is_dst": is_dst})
-    return {"name": name, "total": round(total, 1), "pending": pending, "starters": rows}
+                     "played": playing, "live": state == "in", "is_dst": is_dst})
+    return {"name": name, "total": round(total, 1), "pending": pending, "in_progress": live, "starters": rows}
 
 
-def build(season=None):
+def build(season=None, week=None):
     if season is None:
         season = max(int(p.stem.split("_")[-1]) for p in (ROOT / "data").glob("stats_player_week_*.parquet"))
-    pw = pd.read_parquet(ROOT / "data" / f"stats_player_week_{season}.parquet")
-    week = int(pw["week"].max())                     # the live (possibly partial) week
-    cur = score_players(pw[pw["week"] == week])
-    pts_by_key = cur.assign(k=cur["player_display_name"].map(std_name)).groupby("k")["pts"].sum().to_dict()
-    played_keys = set(cur["player_display_name"].map(std_name))
-
-    tw = pd.read_parquet(ROOT / "data" / f"stats_team_week_{season}.parquet")
-    pbp = pd.read_parquet(ROOT / "data" / f"pbp_{season}.parquet") if (ROOT / "data" / f"pbp_{season}.parquet").exists() else None
-    twk = tw[tw["week"] == week]
-    dst = score_team_dst(twk, pbp[pbp["week"] == week] if pbp is not None else None)
-    dst_by_team = dict(zip(dst["team"], dst["pts_dst"]))
-    dst_teams = set(twk["team"])
+    if week is None:
+        pw = pd.read_parquet(ROOT / "data" / f"stats_player_week_{season}.parquet")
+        week = int(pw["week"].max())             # the live (in-progress) week
+    lw = live_week(season, week)                 # Sleeper scoring + ESPN game state
 
     me = yaml.safe_load(open(ROOT / "league" / "roster.yaml"))
     opp = yaml.safe_load(open(ROOT / "league" / "opponent.yaml"))
-    me_name = "Team Work"
     payload = {
-        "season": season, "week": week,
+        "season": season, "week": week, "source": "Sleeper live + ESPN state",
         "generated": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M"),
-        "me": _score_side(me, me_name, pts_by_key, dst_by_team, played_keys, dst_teams),
-        "opp": _score_side(opp, opp.get("name", "Opponent"), pts_by_key, dst_by_team, played_keys, dst_teams),
+        "me": _score_side(me, "Team Work", lw),
+        "opp": _score_side(opp, opp.get("name", "Opponent"), lw),
     }
     out = ROOT / "data" / f"live_matchup_{season}.json"
     out.write_text(json.dumps(payload, indent=2))

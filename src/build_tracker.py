@@ -48,6 +48,9 @@ h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(24px,5vw,
 .row .pt{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
 .row.done .pt{color:var(--live);font-weight:600}
 .row.todo{opacity:.55} .row.todo .pt{color:var(--pending);font-size:11px}
+.row .live{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--live);margin-left:6px;vertical-align:middle;animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.row .live{animation:none}}
 .row.dst .nm::after{content:"DST";font-family:var(--mono);font-size:9px;background:var(--dst-bg);color:var(--dst);padding:1px 4px;border-radius:3px;margin-left:6px}
 .foot{color:var(--muted);font-size:12px;margin-top:20px;border-top:1px solid var(--line);padding-top:12px}
 </style>
@@ -69,24 +72,28 @@ h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(24px,5vw,
 <script>
 const D=__DATA__;
 const g=id=>document.getElementById(id);
-g("sub").innerHTML=`1 Point per Yard League (#672352) · Week ${D.week} live · banked points only · updated ${D.generated}`;
+g("sub").innerHTML=`1 Point per Yard League (#672352) · Week ${D.week} · ${D.source||"live"} · updated ${D.generated}`;
 function fill(side,nm,tot,pend,h,rows){
   g(nm).textContent=side.name; g(tot).textContent=side.total.toFixed(0);
   g(pend).textContent=`${side.pending} to play`; g(h).textContent=side.name;
   g(rows).innerHTML=side.starters.map(r=>{
     const cls="row "+(r.played?"done":"todo")+(r.is_dst?" dst":"");
     const pt=r.played? r.pts.toFixed(0) : "— to play";
-    return `<div class="${cls}"><span class="slot">${r.slot}</span><span class="nm">${r.name}</span><span class="pt">${pt}</span></div>`;
+    const dot=r.live? '<span class="live" title="in progress"></span>' : "";
+    return `<div class="${cls}"><span class="slot">${r.slot}</span><span class="nm">${r.name}</span><span class="pt">${pt}${dot}</span></div>`;
   }).join("");
 }
 fill(D.me,"mName","mTot","mPend","mH","mRows");
 fill(D.opp,"oName","oTot","oPend","oH","oRows");
 const diff=D.me.total-D.opp.total, lead=diff>=0?D.me:D.opp;
-g("lead").innerHTML = diff===0? "Tied on banked points." :
-  `<b>${lead.name}</b> leads by <b>${Math.abs(diff).toFixed(0)}</b> on points already in the books `+
-  `(${D.me.pending+D.opp.pending} starters still to play).`;
-g("foot").innerHTML="Banked = league-scored output of starters whose games are in the nflverse feed, team DST included. "+
-  "Players yet to play show \\u201c\\u2014 to play.\\u201d Snapshot, not self-updating \\u2014 re-run pull + tracker to refresh.";
+const liveN=D.me.in_progress+D.opp.in_progress;
+g("lead").innerHTML = diff===0? "Tied." :
+  `<b>${lead.name}</b> leads by <b>${Math.abs(diff).toFixed(0)}</b> `+
+  `(${D.me.pending+D.opp.pending} starters still to play${liveN?`, ${liveN} in progress`:""}).`;
+g("foot").innerHTML="Live league scoring from Sleeper (offense, IDP and team DST, including per-player first downs and "+
+  "three-and-outs / fourth-down stops); game state from ESPN. A pulsing dot = game in progress. nflverse is the exact "+
+  "post-game verifier, so a live figure can differ from the final by a few points (first-down charting). "+
+  "Snapshot \\u2014 re-run the tracker to refresh.";
 </script>
 """
 
