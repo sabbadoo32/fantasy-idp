@@ -8,7 +8,7 @@
 
 [[redirects]]
   from = "/data/*"
-  to = "https://sabbadoo32.github.io/fantasy-idp/data/:splat"
+  to = "https://sabbadoo32.github.io/fantasy-idp-data/data/:splat"
   status = 200
   force = true
 

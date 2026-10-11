@@ -24,11 +24,13 @@ jobs:
           python-version: "3.12"
       - run: pip install -q -r requirements.txt
       - run: python src/publish_data.py live
-      - name: Publish live.json to gh-pages/data
+      - name: Publish live.json to the public data repo
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.DATA_PUSH_TOKEN }}   # fine-grained PAT, contents:write on fantasy-idp-data
+          external_repository: sabbadoo32/fantasy-idp-data
+          publish_branch: main
           publish_dir: ./site-data
           destination_dir: data
-          keep_files: true          # don't wipe matchups.json published by the daily job
+          keep_files: true          # keep matchups.json, index.html, README
           commit_message: "live: ${{ github.run_id }}"
