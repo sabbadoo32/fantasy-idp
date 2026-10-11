@@ -9,3 +9,8 @@ __pycache__/
 # macOS
 .DS_Store
 data/sleeper_players.json
+
+# web app
+web/node_modules/
+web/dist/
+site-data/

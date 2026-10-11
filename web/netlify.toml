@@ -1,0 +1,19 @@
+# Netlify config for the Vite app. Set the site's base directory to "web" in Netlify UI,
+# or deploy from repo root with this base. The /data proxy serves the live JSON that the
+# GitHub Action publishes to GitHub Pages, so data refreshes without a Netlify rebuild.
+[build]
+  base = "web"
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/data/*"
+  to = "https://sabbadoo32.github.io/fantasy-idp/data/:splat"
+  status = 200
+  force = true
+
+# SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

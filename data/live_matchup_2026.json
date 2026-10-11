@@ -2,19 +2,19 @@
   "season": 2026,
   "week": 5,
   "source": "Sleeper live + ESPN state",
-  "generated": "2026-10-11 11:59",
+  "generated": "2026-10-11 12:08",
   "me": {
     "name": "Team Work",
-    "total": 365.0,
-    "pending": 17,
-    "in_progress": 0,
+    "total": 383.0,
+    "pending": 7,
+    "in_progress": 10,
     "starters": [
       {
         "slot": "QB",
         "name": "Aaron Rodgers",
-        "pts": 0.0,
-        "played": false,
-        "live": false,
+        "pts": -5.0,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
@@ -37,8 +37,8 @@
         "slot": "WR",
         "name": "Kalif Raymond",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
@@ -60,9 +60,9 @@
       {
         "slot": "TE",
         "name": "T.J. Hockenson",
-        "pts": 0.0,
-        "played": false,
-        "live": false,
+        "pts": 13.0,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
@@ -85,16 +85,16 @@
         "slot": "K",
         "name": "Matt Gay",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
         "slot": "DEF",
         "name": "Bengals",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": true
       },
       {
@@ -117,8 +117,8 @@
         "slot": "DB",
         "name": "Hezekiah Masses",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
@@ -133,32 +133,32 @@
         "slot": "DL",
         "name": "David Bailey",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
         "slot": "DL",
         "name": "Chase Young",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
         "slot": "LB",
         "name": "Blake Cashman",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
         "slot": "LB",
         "name": "Arvell Reese",
-        "pts": 0.0,
-        "played": false,
-        "live": false,
+        "pts": 10.0,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
@@ -173,9 +173,9 @@
   },
   "opp": {
     "name": "OREGON DUCKS",
-    "total": 562.0,
-    "pending": 13,
-    "in_progress": 5,
+    "total": 592.0,
+    "pending": 9,
+    "in_progress": 9,
     "starters": [
       {
         "slot": "QB",
@@ -237,8 +237,8 @@
         "slot": "W/T",
         "name": "Christian Watson",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
@@ -269,14 +269,14 @@
         "slot": "DB",
         "name": "Jevon Holland",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
         "slot": "DB",
         "name": "Travis Hunter",
-        "pts": 80.0,
+        "pts": 110.0,
         "played": true,
         "live": true,
         "is_dst": false
@@ -309,8 +309,8 @@
         "slot": "DL",
         "name": "Alex Highsmith",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       },
       {
@@ -333,8 +333,8 @@
         "slot": "LB",
         "name": "Payton Wilson",
         "pts": 0.0,
-        "played": false,
-        "live": false,
+        "played": true,
+        "live": true,
         "is_dst": false
       }
     ]

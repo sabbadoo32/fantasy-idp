@@ -1,0 +1,37 @@
+name: daily-pull-and-grid
+# Daily: pull the nflverse snapshot, rebuild the matchup grid + report, commit the snapshot
+# (the season tracking record), and publish matchups.json to gh-pages/data for the app.
+on:
+  schedule:
+    - cron: "0 12 * * 2"   # Tuesday 12:00 UTC, after Monday-night finalizes + waivers
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  grid:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - run: python src/pull.py 2026
+      - run: python src/matchups.py && python src/report.py
+      - run: python src/publish_data.py grid
+      - name: Commit weekly snapshot
+        run: |
+          git config user.name "sabbadoo32"
+          git config user.email "623602+sabbadoo32@users.noreply.github.com"
+          git add data/ reports/ && git commit -m "data: weekly pull $(date -u +%F)" || echo "no changes"
+          git push
+      - name: Publish matchups.json to gh-pages/data
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site-data
+          destination_dir: data
+          keep_files: true
+          commit_message: "grid: ${{ github.run_id }}"

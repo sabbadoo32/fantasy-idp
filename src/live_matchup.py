@@ -12,7 +12,7 @@ import sys, json, pathlib
 import pandas as pd, yaml
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from availability import std_name
-from live_source import live_week
+from live_source import live_week, current_week
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -41,10 +41,14 @@ def _score_side(doc, name, lw):
 
 def build(season=None, week=None):
     if season is None:
-        season = max(int(p.stem.split("_")[-1]) for p in (ROOT / "data").glob("stats_player_week_*.parquet"))
+        snaps = list((ROOT / "data").glob("stats_player_week_*.parquet"))
+        season = max((int(p.stem.split("_")[-1]) for p in snaps), default=2026)
     if week is None:
-        pw = pd.read_parquet(ROOT / "data" / f"stats_player_week_{season}.parquet")
-        week = int(pw["week"].max())             # the live (in-progress) week
+        try:
+            week = current_week()                # live week from Sleeper (no parquet needed)
+        except Exception:
+            pw = pd.read_parquet(ROOT / "data" / f"stats_player_week_{season}.parquet")
+            week = int(pw["week"].max())
     lw = live_week(season, week)                 # Sleeper scoring + ESPN game state
 
     me = yaml.safe_load(open(ROOT / "league" / "roster.yaml"))

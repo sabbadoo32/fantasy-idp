@@ -47,6 +47,11 @@ def _get(url, timeout=25):
         return json.load(r)
 
 
+def current_week():
+    """Live NFL week from Sleeper's state endpoint (no parquet needed)."""
+    return int(_get(f"{SLEEPER}/state/nfl")["week"])
+
+
 def _player_map():
     """std_name -> sleeper player meta (id, team, pos). Cached (~5MB); refreshed weekly."""
     cache = ROOT / "data" / "sleeper_players.json"
