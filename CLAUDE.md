@@ -63,7 +63,11 @@ week to week. Claude Code should read this file first every session — it is th
       (scoring vs official box scores, did matchup/returns reads predict, sync held) before
       pitching to the league. (memory/productization-goal.md)
 - [x] Return-game layer: KR/PR yards-allowed per defense + returner flagging (matchups.py, artifact).
-- [ ] Team DST scoring (points-allowed + yards-allowed tiers) from nflverse team stats + schedules.
+- [x] Team DST scoring — score_team_dst (scoring.py), verified Dallas W5 ~219 vs Yahoo. Wired
+      into report.py (DEF row + DST watch) and the grid's DST column. DST is WR1-sized here
+      (Bengals ~343 PPG, #2); needs the slim pbp snapshot. (memory/team-dst-is-core.md)
+- [ ] report.py uses max week incl. the in-progress week — port the last-complete-week guard
+      from matchups.py so partial weeks don't skew the weekly report.
 - [x] Waiver watch filtered by actual Yahoo availability (Chrome sync, 2026-09-30).
 - [ ] Weekly automation: cron `pull.py` + `report.py` after Tuesday waiver run.
 - [ ] Start/sit optimizer across the IR/bench given matchups.
