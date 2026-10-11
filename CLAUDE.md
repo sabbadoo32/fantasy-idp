@@ -58,10 +58,14 @@ week to week. Claude Code should read this file first every session — it is th
 - Show the work: which stat drove the number.
 
 ## TODO / roadmap
-- [ ] PRODUCT GOAL: multi-user leaguewide app — each member links their own Yahoo team (needs
-      Yahoo OAuth approval + hosting, React/Vite/Netlify). Gate: a few weeks of a validation log
-      (scoring vs official box scores, did matchup/returns reads predict, sync held) before
-      pitching to the league. (memory/productization-goal.md)
+- [x] App Stage 1 (single-user, always-live): Vite/React app in web/ (Live Tracker + Matchup
+      Grid, polls live.json/matchups.json); src/publish_data.py + .github/workflows publish to
+      gh-pages, Netlify proxies /data/*. Live scoring via src/live_source.py (Sleeper + ESPN),
+      verified vs Yahoo. Deploy = user enables Pages + connects Netlify.
+- [ ] App Stage 2 (PRODUCT GOAL): multi-user leaguewide — each member links their own Yahoo team
+      (Yahoo OAuth, pending approval). Gate: a few weeks of validation. (memory/productization-goal.md)
+- [ ] Live source lacks a few IDP/DST edge fields vs nflverse (first-down charting differs ~a few
+      pts); nflverse stays the exact post-game verifier.
 - [x] Return-game layer: KR/PR yards-allowed per defense + returner flagging (matchups.py, artifact).
 - [x] Team DST scoring — score_team_dst (scoring.py), verified Dallas W5 ~219 vs Yahoo. Wired
       into report.py (DEF row + DST watch) and the grid's DST column. DST is WR1-sized here
