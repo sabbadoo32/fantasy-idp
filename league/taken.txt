@@ -1,4 +1,4 @@
-# captured 2026-10-11T19:20:06-05:00 source=chrome  (Yahoo league 672352, all 12 rosters; std-name keys)
+# captured 2026-10-13T21:04:07-05:00 source=chrome  (Yahoo league 672352, all 12 rosters; std-name keys)
 aaronjones
 aaronrodgers
 adonaimitchell
@@ -50,7 +50,7 @@ carnelltate
 carsonschwesinger
 cedricgray
 ceedeelamb
-chamarriconner
+charliejones
 chasebrown
 chaseyoung
 chigokonkwo
@@ -71,6 +71,7 @@ daiyanhenley
 dakprescott
 dallasturner
 daltonkincaid
+dameonpierce
 dandreswift
 danieljones
 daniellehunter
@@ -185,6 +186,7 @@ juwanjohnson
 kaimifairbairn
 kalifraymond
 kamarilassiter
+kamcurl
 kavontaeturpin
 kayshonboutte
 kcconcepcion
@@ -196,7 +198,6 @@ keoncoleman
 kevinbyard
 keyroncrawford
 khalilshakir
-kirkcousins
 kitancrawford
 kylehamilton
 kylemonangai
@@ -210,11 +211,13 @@ ljcollier
 lutherburden
 malachimoore
 malakistarks
+malikmustapha
 maliknabers
 malikwashington
 malikwillis
 marcusjones
 markandrews
+marshawnlloyd
 marvinmims
 mattgay
 matthewgolden
@@ -297,7 +300,6 @@ vincentanthony
 wandalerobinson
 willanderson
 willreichard
-willshipley
 woodymarks
 xavierwatts
 xavierworthy

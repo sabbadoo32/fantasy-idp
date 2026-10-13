@@ -1,17 +1,17 @@
 # Current-week opponent for the live matchup tracker (src/live_matchup.py).
 # Update weekly: team name, Yahoo team id, and the opponent's STARTING lineup (scraped live).
-week: 5
-name: OREGON DUCKS
-team_id: 6
+week: 6
+name: Dak Says
+team_id: 4
 starters:
-  QB:  [{name: Josh Allen, team: BUF}]
-  RB:  [{name: Blake Corum, team: LAR}, {name: Emanuel Wilson, team: SEA}]
-  WR:  [{name: CeeDee Lamb, team: DAL}, {name: Jaylen Waddle, team: DEN}, {name: Parker Washington, team: JAX}]
-  TE:  [{name: Mark Andrews, team: BAL}]
-  "W/T": [{name: Christian Watson, team: GB, pos: WR}]
-  "W/R": [{name: Will Shipley, team: PHI, pos: RB}]
-  K:   [{name: Tyler Loop, team: BAL}]
-  DEF: [{name: Cowboys, team: DAL}]
-  DB:  [{name: Jevon Holland, team: NYG, pos: S}, {name: Travis Hunter, team: JAX, pos: CB}, {name: Julian Love, team: SEA, pos: S}]
-  DL:  [{name: Travon Walker, team: JAX, pos: DE}, {name: Boye Mafe, team: SEA, pos: DE}, {name: Alex Highsmith, team: PIT, pos: DE}]
-  LB:  [{name: Daiyan Henley, team: LAC, pos: LB}, {name: Ventrell Miller, team: JAX, pos: LB}, {name: Payton Wilson, team: PIT, pos: LB}]
+  QB:  [{name: Brock Purdy, team: SF}]
+  RB:  [{name: Omarion Hampton, team: LAC}, {name: Tony Pollard, team: TEN}]
+  WR:  [{name: Davante Adams, team: LAR}, {name: Tetairoa McMillan, team: CAR}, {name: Charlie Jones, team: NYG}]
+  TE:  [{name: George Kittle, team: SF}]
+  "W/T": [{name: Dalton Kincaid, team: BUF, pos: TE}]
+  "W/R": [{name: Alvin Kamara, team: "NO", pos: RB}]
+  K:   [{name: Spencer Shrader, team: IND}]
+  DEF: [{name: Ravens, team: BAL}]
+  DB:  [{name: Caleb Downs, team: DAL, pos: S}, {name: Kamari Lassiter, team: HOU, pos: CB}, {name: Malik Mustapha, team: SF, pos: S}]
+  DL:  [{name: Donovan Ezeiruaku, team: DAL, pos: DE}, {name: DeForest Buckner, team: IND, pos: DT}, {name: Byron Young, team: LAR, pos: DE}]
+  LB:  [{name: Alex Singleton, team: DEN, pos: LB}, {name: Demetrius Knight Jr., team: CIN, pos: LB}, {name: Jamien Sherwood, team: NYJ, pos: LB}]

@@ -14,16 +14,18 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 # Current-week starters: (slot, name, position group, opponent defense). Resync from the live
 # Yahoo team page each week. A returner (flagged from the data) is scored on the opponent's
 # return-yards-allowed, not his listed-position coverage — see memory/review-before-advice.md.
-FRAMES = [
-    ("QB", "Aaron Rodgers", "QB", "IND"), ("RB", "Jahmyr Gibbs", "RB", "ARI"),
-    ("RB", "Brian Robinson", "RB", "BAL"), ("WR", "Kalif Raymond", "WR", "GB"),
-    ("WR", "Keon Coleman", "WR", "LAR"), ("WR", "Jalen Brooks", "WR", "DET"),
-    ("TE", "T.J. Hockenson", "TE", "NO"), ("W/R", "Keaton Mitchell", "RB", "DEN"),
-    ("DEF", "Bengals", "DEF", "MIA"),
-    ("DL", "David Bailey", "IDP-DL", "CLE"), ("DL", "Chase Young", "IDP-DL", "MIN"),
-    ("LB", "Blake Cashman", "IDP-LB", "NO"), ("LB", "Arvell Reese", "IDP-LB", "WAS"),
-    ("DB", "Quentin Lake", "IDP-DB", "BUF"), ("DB", "Talanoa Hufanga", "IDP-DB", "LAC"),
-    ("DB", "Hezekiah Masses", "IDP-DB", "NE"),
+FRAMES = [  # Week 6: opp = each starter's NFL opponent defense; "BYE" = player's team is off
+    ("QB", "Aaron Rodgers", "QB", "TB"), ("RB", "Jahmyr Gibbs", "RB", "BYE"),
+    ("RB", "Brian Robinson", "RB", "CHI"), ("WR", "Kalif Raymond", "WR", "ATL"),
+    ("WR", "Keon Coleman", "WR", "LV"), ("WR", "Jalen Brooks", "WR", "LAR"),
+    ("TE", "T.J. Hockenson", "TE", "BYE"), ("W/T", "George Pickens", "WR", "GB"),
+    ("W/R", "Keaton Mitchell", "RB", "KC"), ("DEF", "Bengals", "DEF", "BYE"),
+    ("DL", "Jaishawn Barham", "IDP-DL", "GB"), ("DL", "David Bailey", "IDP-DL", "NE"),
+    ("DL", "Chase Young", "IDP-DL", "NYG"),
+    ("LB", "Blake Cashman", "IDP-LB", "BYE"), ("LB", "Arvell Reese", "IDP-LB", "NO"),
+    ("LB", "Josiah Trotter", "IDP-LB", "PIT"),
+    ("DB", "Quentin Lake", "IDP-DB", "ARI"), ("DB", "Talanoa Hufanga", "IDP-DB", "SEA"),
+    ("DB", "Hezekiah Masses", "IDP-DB", "BUF"),
 ]
 
 

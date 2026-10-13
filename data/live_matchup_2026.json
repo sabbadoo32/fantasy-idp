@@ -1,20 +1,20 @@
 {
   "season": 2026,
-  "week": 5,
+  "week": 6,
   "source": "Sleeper live + ESPN state",
-  "generated": "2026-10-11 14:21",
+  "generated": "2026-10-13 16:06",
   "me": {
     "name": "Team Work",
-    "total": 1235.0,
-    "pending": 7,
-    "in_progress": 10,
+    "total": 0.0,
+    "pending": 20,
+    "in_progress": 0,
     "starters": [
       {
         "slot": "QB",
         "name": "Aaron Rodgers",
-        "pts": 199.0,
-        "played": true,
-        "live": true,
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
@@ -36,9 +36,9 @@
       {
         "slot": "WR",
         "name": "Kalif Raymond",
-        "pts": 17.0,
-        "played": true,
-        "live": true,
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
@@ -60,16 +60,16 @@
       {
         "slot": "TE",
         "name": "T.J. Hockenson",
-        "pts": 13.0,
-        "played": true,
-        "live": true,
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
         "slot": "W/T",
         "name": "George Pickens",
-        "pts": 170.0,
-        "played": true,
+        "pts": 0.0,
+        "played": false,
         "live": false,
         "is_dst": false
       },
@@ -85,16 +85,16 @@
         "slot": "K",
         "name": "Matt Gay",
         "pts": 0.0,
-        "played": true,
-        "live": true,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
         "slot": "DEF",
         "name": "Bengals",
-        "pts": 244.0,
-        "played": true,
-        "live": true,
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": true
       },
       {
@@ -116,70 +116,70 @@
       {
         "slot": "DB",
         "name": "Hezekiah Masses",
-        "pts": 15.0,
-        "played": true,
-        "live": true,
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
         "slot": "DL",
         "name": "Jaishawn Barham",
-        "pts": 80.0,
-        "played": true,
+        "pts": 0.0,
+        "played": false,
         "live": false,
         "is_dst": false
       },
       {
         "slot": "DL",
         "name": "David Bailey",
-        "pts": 150.0,
-        "played": true,
-        "live": true,
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
         "slot": "DL",
         "name": "Chase Young",
-        "pts": 67.0,
-        "played": true,
-        "live": true,
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
         "slot": "LB",
         "name": "Blake Cashman",
-        "pts": 110.0,
-        "played": true,
-        "live": true,
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
         "slot": "LB",
         "name": "Arvell Reese",
-        "pts": 55.0,
-        "played": true,
-        "live": true,
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
         "slot": "LB",
         "name": "Josiah Trotter",
-        "pts": 115.0,
-        "played": true,
+        "pts": 0.0,
+        "played": false,
         "live": false,
         "is_dst": false
       }
     ]
   },
   "opp": {
-    "name": "OREGON DUCKS",
-    "total": 1041.0,
-    "pending": 9,
-    "in_progress": 4,
+    "name": "Dak Says",
+    "total": 0.0,
+    "pending": 20,
+    "in_progress": 0,
     "starters": [
       {
         "slot": "QB",
-        "name": "Josh Allen",
+        "name": "Brock Purdy",
         "pts": 0.0,
         "played": false,
         "live": false,
@@ -187,7 +187,7 @@
       },
       {
         "slot": "RB",
-        "name": "Blake Corum",
+        "name": "Omarion Hampton",
         "pts": 0.0,
         "played": false,
         "live": false,
@@ -195,7 +195,7 @@
       },
       {
         "slot": "RB",
-        "name": "Emanuel Wilson",
+        "name": "Tony Pollard",
         "pts": 0.0,
         "played": false,
         "live": false,
@@ -203,15 +203,7 @@
       },
       {
         "slot": "WR",
-        "name": "CeeDee Lamb",
-        "pts": 11.0,
-        "played": true,
-        "live": false,
-        "is_dst": false
-      },
-      {
-        "slot": "WR",
-        "name": "Jaylen Waddle",
+        "name": "Davante Adams",
         "pts": 0.0,
         "played": false,
         "live": false,
@@ -219,15 +211,23 @@
       },
       {
         "slot": "WR",
-        "name": "Parker Washington",
-        "pts": 158.0,
-        "played": true,
+        "name": "Tetairoa McMillan",
+        "pts": 0.0,
+        "played": false,
+        "live": false,
+        "is_dst": false
+      },
+      {
+        "slot": "WR",
+        "name": "Charlie Jones",
+        "pts": 0.0,
+        "played": false,
         "live": false,
         "is_dst": false
       },
       {
         "slot": "TE",
-        "name": "Mark Andrews",
+        "name": "George Kittle",
         "pts": 0.0,
         "played": false,
         "live": false,
@@ -235,23 +235,23 @@
       },
       {
         "slot": "W/T",
-        "name": "Christian Watson",
-        "pts": 163.0,
-        "played": true,
-        "live": true,
+        "name": "Dalton Kincaid",
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
         "slot": "W/R",
-        "name": "Will Shipley",
-        "pts": 25.0,
-        "played": true,
+        "name": "Alvin Kamara",
+        "pts": 0.0,
+        "played": false,
         "live": false,
         "is_dst": false
       },
       {
         "slot": "K",
-        "name": "Tyler Loop",
+        "name": "Spencer Shrader",
         "pts": 0.0,
         "played": false,
         "live": false,
@@ -259,31 +259,31 @@
       },
       {
         "slot": "DEF",
-        "name": "Cowboys",
-        "pts": 219.0,
-        "played": true,
+        "name": "Ravens",
+        "pts": 0.0,
+        "played": false,
         "live": false,
         "is_dst": true
       },
       {
         "slot": "DB",
-        "name": "Jevon Holland",
+        "name": "Caleb Downs",
         "pts": 0.0,
-        "played": true,
-        "live": true,
-        "is_dst": false
-      },
-      {
-        "slot": "DB",
-        "name": "Travis Hunter",
-        "pts": 110.0,
-        "played": true,
+        "played": false,
         "live": false,
         "is_dst": false
       },
       {
         "slot": "DB",
-        "name": "Julian Love",
+        "name": "Kamari Lassiter",
+        "pts": 0.0,
+        "played": false,
+        "live": false,
+        "is_dst": false
+      },
+      {
+        "slot": "DB",
+        "name": "Malik Mustapha",
         "pts": 0.0,
         "played": false,
         "live": false,
@@ -291,31 +291,23 @@
       },
       {
         "slot": "DL",
-        "name": "Travon Walker",
-        "pts": 55.0,
-        "played": true,
-        "live": false,
-        "is_dst": false
-      },
-      {
-        "slot": "DL",
-        "name": "Boye Mafe",
-        "pts": 70.0,
+        "name": "Donovan Ezeiruaku",
+        "pts": 0.0,
         "played": false,
         "live": false,
         "is_dst": false
       },
       {
         "slot": "DL",
-        "name": "Alex Highsmith",
-        "pts": 20.0,
-        "played": true,
-        "live": true,
+        "name": "DeForest Buckner",
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       },
       {
-        "slot": "LB",
-        "name": "Daiyan Henley",
+        "slot": "DL",
+        "name": "Byron Young",
         "pts": 0.0,
         "played": false,
         "live": false,
@@ -323,18 +315,26 @@
       },
       {
         "slot": "LB",
-        "name": "Ventrell Miller",
-        "pts": 50.0,
-        "played": true,
+        "name": "Alex Singleton",
+        "pts": 0.0,
+        "played": false,
         "live": false,
         "is_dst": false
       },
       {
         "slot": "LB",
-        "name": "Payton Wilson",
-        "pts": 160.0,
-        "played": true,
-        "live": true,
+        "name": "Demetrius Knight Jr.",
+        "pts": 0.0,
+        "played": false,
+        "live": false,
+        "is_dst": false
+      },
+      {
+        "slot": "LB",
+        "name": "Jamien Sherwood",
+        "pts": 0.0,
+        "played": false,
+        "live": false,
         "is_dst": false
       }
     ]
