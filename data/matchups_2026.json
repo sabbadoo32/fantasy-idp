@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "through_week": 7,
-  "generated": "2026-10-27 17:49",
+  "through_week": 8,
+  "generated": "2026-11-03 19:21",
   "positions": [
     "QB",
     "RB",
@@ -16,469 +16,469 @@
     {
       "team": "ARI",
       "allowed": {
-        "QB": 273.1,
-        "RB": 235.1,
-        "WR": 289.6,
-        "TE": 88.1,
-        "K": 72.4,
-        "IDP-DL": 235.7,
-        "IDP-LB": 413.3,
-        "IDP-DB": 547.7
+        "QB": 270.1,
+        "RB": 242.4,
+        "WR": 287.5,
+        "TE": 85.4,
+        "K": 78.2,
+        "IDP-DL": 242.5,
+        "IDP-LB": 433.9,
+        "IDP-DB": 538.0
       },
       "rank": {
-        "QB": 6,
-        "RB": 11,
-        "WR": 19,
-        "TE": 11,
-        "K": 19,
-        "IDP-DL": 13,
-        "IDP-LB": 10,
-        "IDP-DB": 5
+        "QB": 5,
+        "RB": 13,
+        "WR": 16,
+        "TE": 13,
+        "K": 17,
+        "IDP-DL": 16,
+        "IDP-LB": 9,
+        "IDP-DB": 6
       },
       "levels": {
-        "rb_ground": 163.0,
-        "rb_air": 44.1
+        "rb_ground": 158.4,
+        "rb_air": 42.1
       },
       "returns": {
-        "kr_yds": 84.3,
-        "kr_ret": 3.4,
-        "pr_yds": 20.6,
-        "ret_yds": 104.9,
-        "kr_rank": 28,
-        "ret_rank": 28
+        "kr_yds": 91.5,
+        "kr_ret": 3.6,
+        "pr_yds": 21.6,
+        "ret_yds": 113.1,
+        "kr_rank": 25,
+        "ret_rank": 23
       },
       "dst_against": {
-        "pts": 244.0,
-        "rank": 25
+        "pts": 267.6,
+        "rank": 18
       }
     },
     {
       "team": "ATL",
       "allowed": {
-        "QB": 280.7,
-        "RB": 226.1,
-        "WR": 339.9,
-        "TE": 84.3,
-        "K": 56.1,
-        "IDP-DL": 185.0,
-        "IDP-LB": 470.6,
-        "IDP-DB": 459.4
+        "QB": 248.5,
+        "RB": 252.6,
+        "WR": 298.4,
+        "TE": 73.8,
+        "K": 65.6,
+        "IDP-DL": 185.6,
+        "IDP-LB": 454.2,
+        "IDP-DB": 453.9
       },
       "rank": {
-        "QB": 5,
-        "RB": 17,
-        "WR": 5,
-        "TE": 13,
-        "K": 26,
-        "IDP-DL": 28,
-        "IDP-LB": 3,
-        "IDP-DB": 22
+        "QB": 15,
+        "RB": 9,
+        "WR": 13,
+        "TE": 22,
+        "K": 23,
+        "IDP-DL": 30,
+        "IDP-LB": 5,
+        "IDP-DB": 21
       },
       "levels": {
-        "rb_ground": 127.9,
-        "rb_air": 57.6
+        "rb_ground": 166.6,
+        "rb_air": 50.4
       },
       "returns": {
-        "kr_yds": 130.6,
-        "kr_ret": 5.0,
-        "pr_yds": 18.4,
-        "ret_yds": 149.0,
-        "kr_rank": 4,
-        "ret_rank": 4
+        "kr_yds": 116.8,
+        "kr_ret": 4.5,
+        "pr_yds": 17.1,
+        "ret_yds": 133.9,
+        "kr_rank": 10,
+        "ret_rank": 10
       },
       "dst_against": {
-        "pts": 310.9,
-        "rank": 4
+        "pts": 303.5,
+        "rank": 6
       }
     },
     {
       "team": "BAL",
       "allowed": {
-        "QB": 256.7,
-        "RB": 179.3,
-        "WR": 337.4,
-        "TE": 54.9,
-        "K": 79.1,
-        "IDP-DL": 338.6,
-        "IDP-LB": 329.1,
-        "IDP-DB": 409.6
+        "QB": 264.5,
+        "RB": 187.6,
+        "WR": 323.8,
+        "TE": 67.5,
+        "K": 88.8,
+        "IDP-DL": 316.2,
+        "IDP-LB": 341.1,
+        "IDP-DB": 417.4
       },
       "rank": {
-        "QB": 12,
-        "RB": 32,
+        "QB": 10,
+        "RB": 31,
         "WR": 7,
-        "TE": 32,
-        "K": 17,
-        "IDP-DL": 1,
-        "IDP-LB": 28,
-        "IDP-DB": 31
+        "TE": 29,
+        "K": 11,
+        "IDP-DL": 2,
+        "IDP-LB": 27,
+        "IDP-DB": 29
       },
       "levels": {
-        "rb_ground": 127.0,
-        "rb_air": 20.1
+        "rb_ground": 134.4,
+        "rb_air": 25.1
       },
       "returns": {
-        "kr_yds": 102.6,
-        "kr_ret": 3.6,
-        "pr_yds": 15.1,
-        "ret_yds": 117.7,
-        "kr_rank": 20,
-        "ret_rank": 21
+        "kr_yds": 92.5,
+        "kr_ret": 3.2,
+        "pr_yds": 18.2,
+        "ret_yds": 110.7,
+        "kr_rank": 24,
+        "ret_rank": 27
       },
       "dst_against": {
-        "pts": 255.9,
+        "pts": 264.0,
         "rank": 20
       }
     },
     {
       "team": "BUF",
       "allowed": {
-        "QB": 304.7,
-        "RB": 258.3,
-        "WR": 360.3,
-        "TE": 115.8,
-        "K": 54.5,
-        "IDP-DL": 179.2,
-        "IDP-LB": 412.5,
-        "IDP-DB": 472.7
+        "QB": 260.0,
+        "RB": 267.1,
+        "WR": 327.4,
+        "TE": 105.4,
+        "K": 51.0,
+        "IDP-DL": 179.3,
+        "IDP-LB": 422.9,
+        "IDP-DB": 483.7
       },
       "rank": {
-        "QB": 2,
-        "RB": 4,
-        "WR": 3,
-        "TE": 5,
-        "K": 28,
-        "IDP-DL": 30,
-        "IDP-LB": 11,
-        "IDP-DB": 19
+        "QB": 11,
+        "RB": 2,
+        "WR": 6,
+        "TE": 6,
+        "K": 29,
+        "IDP-DL": 32,
+        "IDP-LB": 10,
+        "IDP-DB": 16
       },
       "levels": {
-        "rb_ground": 136.8,
-        "rb_air": 68.3
+        "rb_ground": 132.3,
+        "rb_air": 64.7
       },
       "returns": {
-        "kr_yds": 161.0,
-        "kr_ret": 6.2,
-        "pr_yds": 5.3,
-        "ret_yds": 166.3,
+        "kr_yds": 169.1,
+        "kr_ret": 6.4,
+        "pr_yds": 4.9,
+        "ret_yds": 174.0,
         "kr_rank": 1,
         "ret_rank": 1
       },
       "dst_against": {
-        "pts": 272.0,
-        "rank": 15
+        "pts": 278.3,
+        "rank": 12
       }
     },
     {
       "team": "CAR",
       "allowed": {
-        "QB": 227.5,
-        "RB": 263.5,
-        "WR": 264.2,
-        "TE": 80.8,
-        "K": 75.3,
-        "IDP-DL": 305.5,
-        "IDP-LB": 310.8,
-        "IDP-DB": 516.8
+        "QB": 233.7,
+        "RB": 248.6,
+        "WR": 280.3,
+        "TE": 81.4,
+        "K": 65.0,
+        "IDP-DL": 312.3,
+        "IDP-LB": 353.0,
+        "IDP-DB": 498.7
       },
       "rank": {
-        "QB": 22,
-        "RB": 2,
-        "WR": 23,
-        "TE": 17,
-        "K": 18,
+        "QB": 21,
+        "RB": 10,
+        "WR": 21,
+        "TE": 15,
+        "K": 24,
         "IDP-DL": 3,
-        "IDP-LB": 30,
-        "IDP-DB": 10
+        "IDP-LB": 23,
+        "IDP-DB": 13
       },
       "levels": {
-        "rb_ground": 191.0,
-        "rb_air": 38.0
+        "rb_ground": 178.6,
+        "rb_air": 38.3
       },
       "returns": {
-        "kr_yds": 99.3,
+        "kr_yds": 103.0,
         "kr_ret": 4.7,
-        "pr_yds": 8.8,
-        "ret_yds": 108.1,
-        "kr_rank": 22,
-        "ret_rank": 26
+        "pr_yds": 8.6,
+        "ret_yds": 111.6,
+        "kr_rank": 20,
+        "ret_rank": 25
       },
       "dst_against": {
-        "pts": 283.8,
-        "rank": 11
+        "pts": 304.9,
+        "rank": 5
       }
     },
     {
       "team": "CHI",
       "allowed": {
-        "QB": 252.4,
-        "RB": 182.4,
-        "WR": 258.9,
-        "TE": 85.9,
-        "K": 50.0,
-        "IDP-DL": 275.0,
-        "IDP-LB": 464.3,
-        "IDP-DB": 564.0
+        "QB": 244.5,
+        "RB": 191.6,
+        "WR": 257.4,
+        "TE": 78.9,
+        "K": 47.5,
+        "IDP-DL": 277.5,
+        "IDP-LB": 460.0,
+        "IDP-DB": 551.6
       },
       "rank": {
-        "QB": 15,
-        "RB": 31,
-        "WR": 25,
-        "TE": 12,
+        "QB": 18,
+        "RB": 30,
+        "WR": 26,
+        "TE": 19,
         "K": 30,
-        "IDP-DL": 8,
-        "IDP-LB": 4,
-        "IDP-DB": 2
+        "IDP-DL": 7,
+        "IDP-LB": 2,
+        "IDP-DB": 3
       },
       "levels": {
-        "rb_ground": 108.1,
-        "rb_air": 45.0
+        "rb_ground": 105.0,
+        "rb_air": 41.8
       },
       "returns": {
-        "kr_yds": 94.4,
-        "kr_ret": 4.1,
+        "kr_yds": 100.6,
+        "kr_ret": 4.4,
         "pr_yds": 11.6,
-        "ret_yds": 106.0,
-        "kr_rank": 24,
-        "ret_rank": 27
+        "ret_yds": 112.2,
+        "kr_rank": 21,
+        "ret_rank": 24
       },
       "dst_against": {
-        "pts": 279.0,
-        "rank": 12
+        "pts": 273.0,
+        "rank": 14
       }
     },
     {
       "team": "CIN",
       "allowed": {
-        "QB": 252.7,
-        "RB": 202.3,
-        "WR": 300.7,
-        "TE": 125.7,
-        "K": 94.5,
-        "IDP-DL": 213.3,
-        "IDP-LB": 376.7,
-        "IDP-DB": 493.7
+        "QB": 266.7,
+        "RB": 203.1,
+        "WR": 315.9,
+        "TE": 133.0,
+        "K": 95.0,
+        "IDP-DL": 236.4,
+        "IDP-LB": 360.7,
+        "IDP-DB": 524.9
       },
       "rank": {
-        "QB": 14,
-        "RB": 27,
-        "WR": 15,
-        "TE": 3,
-        "K": 7,
-        "IDP-DL": 23,
-        "IDP-LB": 17,
-        "IDP-DB": 14
+        "QB": 7,
+        "RB": 28,
+        "WR": 9,
+        "TE": 2,
+        "K": 8,
+        "IDP-DL": 18,
+        "IDP-LB": 21,
+        "IDP-DB": 8
       },
       "levels": {
-        "rb_ground": 123.0,
-        "rb_air": 40.5
+        "rb_ground": 129.7,
+        "rb_air": 38.0
       },
       "returns": {
-        "kr_yds": 122.3,
-        "kr_ret": 4.8,
-        "pr_yds": 13.5,
-        "ret_yds": 135.8,
-        "kr_rank": 8,
-        "ret_rank": 10
+        "kr_yds": 127.7,
+        "kr_ret": 5.0,
+        "pr_yds": 12.7,
+        "ret_yds": 140.4,
+        "kr_rank": 4,
+        "ret_rank": 5
       },
       "dst_against": {
-        "pts": 248.2,
-        "rank": 22
+        "pts": 270.9,
+        "rank": 15
       }
     },
     {
       "team": "CLE",
       "allowed": {
-        "QB": 218.3,
-        "RB": 228.7,
-        "WR": 292.3,
-        "TE": 69.0,
-        "K": 88.7,
-        "IDP-DL": 262.9,
-        "IDP-LB": 424.6,
-        "IDP-DB": 456.3
+        "QB": 208.1,
+        "RB": 240.0,
+        "WR": 275.1,
+        "TE": 81.2,
+        "K": 85.9,
+        "IDP-DL": 266.2,
+        "IDP-LB": 455.2,
+        "IDP-DB": 453.6
       },
       "rank": {
-        "QB": 24,
+        "QB": 27,
         "RB": 14,
-        "WR": 18,
-        "TE": 25,
-        "K": 12,
+        "WR": 23,
+        "TE": 17,
+        "K": 14,
         "IDP-DL": 10,
-        "IDP-LB": 8,
-        "IDP-DB": 23
+        "IDP-LB": 4,
+        "IDP-DB": 22
       },
       "levels": {
-        "rb_ground": 156.3,
-        "rb_air": 27.4
+        "rb_ground": 175.2,
+        "rb_air": 24.1
       },
       "returns": {
-        "kr_yds": 92.4,
-        "kr_ret": 3.6,
-        "pr_yds": 21.3,
-        "ret_yds": 113.7,
-        "kr_rank": 25,
-        "ret_rank": 24
+        "kr_yds": 90.9,
+        "kr_ret": 3.5,
+        "pr_yds": 18.6,
+        "ret_yds": 109.5,
+        "kr_rank": 26,
+        "ret_rank": 28
       },
       "dst_against": {
-        "pts": 297.3,
-        "rank": 6
+        "pts": 314.2,
+        "rank": 4
       }
     },
     {
       "team": "DAL",
       "allowed": {
-        "QB": 287.1,
-        "RB": 205.3,
-        "WR": 302.1,
-        "TE": 83.6,
-        "K": 70.6,
-        "IDP-DL": 175.0,
-        "IDP-LB": 350.9,
-        "IDP-DB": 516.3
+        "QB": 289.4,
+        "RB": 214.4,
+        "WR": 307.4,
+        "TE": 89.6,
+        "K": 72.8,
+        "IDP-DL": 206.2,
+        "IDP-LB": 373.2,
+        "IDP-DB": 516.2
       },
       "rank": {
-        "QB": 4,
-        "RB": 26,
-        "WR": 14,
-        "TE": 15,
-        "K": 21,
-        "IDP-DL": 32,
-        "IDP-LB": 24,
-        "IDP-DB": 11
+        "QB": 2,
+        "RB": 23,
+        "WR": 12,
+        "TE": 10,
+        "K": 19,
+        "IDP-DL": 26,
+        "IDP-LB": 18,
+        "IDP-DB": 10
       },
       "levels": {
-        "rb_ground": 161.3,
-        "rb_air": 37.6
+        "rb_ground": 170.1,
+        "rb_air": 43.0
       },
       "returns": {
-        "kr_yds": 82.7,
-        "kr_ret": 4.3,
-        "pr_yds": 10.6,
-        "ret_yds": 93.3,
+        "kr_yds": 86.2,
+        "kr_ret": 4.4,
+        "pr_yds": 10.8,
+        "ret_yds": 97.0,
         "kr_rank": 29,
         "ret_rank": 29
       },
       "dst_against": {
-        "pts": 183.6,
-        "rank": 32
+        "pts": 196.5,
+        "rank": 31
       }
     },
     {
       "team": "DEN",
       "allowed": {
-        "QB": 243.1,
-        "RB": 246.6,
-        "WR": 286.1,
-        "TE": 101.3,
-        "K": 80.1,
-        "IDP-DL": 177.9,
-        "IDP-LB": 317.9,
-        "IDP-DB": 416.6
+        "QB": 257.1,
+        "RB": 262.4,
+        "WR": 280.9,
+        "TE": 103.9,
+        "K": 76.5,
+        "IDP-DL": 191.2,
+        "IDP-LB": 312.5,
+        "IDP-DB": 408.9
       },
       "rank": {
-        "QB": 18,
-        "RB": 8,
-        "WR": 20,
-        "TE": 8,
-        "K": 16,
-        "IDP-DL": 31,
-        "IDP-LB": 29,
-        "IDP-DB": 29
+        "QB": 12,
+        "RB": 3,
+        "WR": 19,
+        "TE": 7,
+        "K": 18,
+        "IDP-DL": 28,
+        "IDP-LB": 31,
+        "IDP-DB": 31
       },
       "levels": {
-        "rb_ground": 157.9,
-        "rb_air": 49.0
+        "rb_ground": 154.5,
+        "rb_air": 65.1
       },
       "returns": {
-        "kr_yds": 106.1,
-        "kr_ret": 4.3,
-        "pr_yds": 14.0,
-        "ret_yds": 120.1,
-        "kr_rank": 18,
-        "ret_rank": 19
+        "kr_yds": 107.9,
+        "kr_ret": 4.2,
+        "pr_yds": 14.6,
+        "ret_yds": 122.5,
+        "kr_rank": 16,
+        "ret_rank": 17
       },
       "dst_against": {
-        "pts": 195.7,
-        "rank": 31
+        "pts": 193.0,
+        "rank": 32
       }
     },
     {
       "team": "DET",
       "allowed": {
-        "QB": 333.5,
-        "RB": 191.8,
-        "WR": 372.5,
-        "TE": 157.2,
-        "K": 37.3,
-        "IDP-DL": 230.0,
-        "IDP-LB": 422.5,
-        "IDP-DB": 494.2
+        "QB": 319.1,
+        "RB": 180.1,
+        "WR": 353.6,
+        "TE": 150.9,
+        "K": 32.1,
+        "IDP-DL": 213.6,
+        "IDP-LB": 444.3,
+        "IDP-DB": 506.4
       },
       "rank": {
         "QB": 1,
-        "RB": 29,
-        "WR": 2,
+        "RB": 32,
+        "WR": 3,
         "TE": 1,
-        "K": 31,
-        "IDP-DL": 19,
-        "IDP-LB": 9,
-        "IDP-DB": 13
+        "K": 32,
+        "IDP-DL": 24,
+        "IDP-LB": 7,
+        "IDP-DB": 11
       },
       "levels": {
-        "rb_ground": 128.0,
-        "rb_air": 36.3
+        "rb_ground": 119.7,
+        "rb_air": 35.4
       },
       "returns": {
-        "kr_yds": 111.0,
-        "kr_ret": 4.7,
-        "pr_yds": 10.8,
-        "ret_yds": 121.8,
-        "kr_rank": 14,
-        "ret_rank": 16
+        "kr_yds": 105.4,
+        "kr_ret": 4.4,
+        "pr_yds": 9.3,
+        "ret_yds": 114.7,
+        "kr_rank": 18,
+        "ret_rank": 21
       },
       "dst_against": {
-        "pts": 233.0,
-        "rank": 28
+        "pts": 234.9,
+        "rank": 27
       }
     },
     {
       "team": "GB",
       "allowed": {
-        "QB": 200.6,
-        "RB": 238.3,
-        "WR": 339.3,
-        "TE": 63.6,
-        "K": 35.7,
-        "IDP-DL": 235.7,
-        "IDP-LB": 307.4,
-        "IDP-DB": 481.1
+        "QB": 199.9,
+        "RB": 244.4,
+        "WR": 317.1,
+        "TE": 63.9,
+        "K": 43.2,
+        "IDP-DL": 228.8,
+        "IDP-LB": 320.9,
+        "IDP-DB": 498.1
       },
       "rank": {
-        "QB": 30,
-        "RB": 10,
-        "WR": 6,
-        "TE": 29,
-        "K": 32,
-        "IDP-DL": 13,
-        "IDP-LB": 31,
-        "IDP-DB": 17
+        "QB": 28,
+        "RB": 11,
+        "WR": 8,
+        "TE": 30,
+        "K": 31,
+        "IDP-DL": 21,
+        "IDP-LB": 30,
+        "IDP-DB": 14
       },
       "levels": {
-        "rb_ground": 157.3,
-        "rb_air": 44.7
+        "rb_ground": 154.0,
+        "rb_air": 46.0
       },
       "returns": {
-        "kr_yds": 115.4,
+        "kr_yds": 112.5,
         "kr_ret": 4.1,
-        "pr_yds": 13.1,
-        "ret_yds": 128.5,
-        "kr_rank": 13,
+        "pr_yds": 12.6,
+        "ret_yds": 125.1,
+        "kr_rank": 14,
         "ret_rank": 13
       },
       "dst_against": {
-        "pts": 277.9,
-        "rank": 13
+        "pts": 270.0,
+        "rank": 16
       }
     },
     {
@@ -494,14 +494,14 @@
         "IDP-DB": 443.4
       },
       "rank": {
-        "QB": 10,
+        "QB": 8,
         "RB": 25,
-        "WR": 4,
+        "WR": 2,
         "TE": 14,
         "K": 9,
         "IDP-DL": 9,
-        "IDP-LB": 26,
-        "IDP-DB": 24
+        "IDP-LB": 28,
+        "IDP-DB": 23
       },
       "levels": {
         "rb_ground": 143.7,
@@ -512,8 +512,8 @@
         "kr_ret": 4.3,
         "pr_yds": 18.1,
         "ret_yds": 137.1,
-        "kr_rank": 11,
-        "ret_rank": 8
+        "kr_rank": 6,
+        "ret_rank": 6
       },
       "dst_against": {
         "pts": 247.6,
@@ -523,351 +523,351 @@
     {
       "team": "IND",
       "allowed": {
-        "QB": 257.7,
-        "RB": 249.0,
-        "WR": 310.0,
-        "TE": 69.0,
-        "K": 119.3,
-        "IDP-DL": 298.9,
-        "IDP-LB": 370.1,
-        "IDP-DB": 536.7
+        "QB": 252.9,
+        "RB": 260.8,
+        "WR": 286.5,
+        "TE": 76.5,
+        "K": 105.1,
+        "IDP-DL": 310.2,
+        "IDP-LB": 373.8,
+        "IDP-DB": 533.4
       },
       "rank": {
-        "QB": 11,
-        "RB": 7,
-        "WR": 11,
-        "TE": 25,
+        "QB": 14,
+        "RB": 4,
+        "WR": 17,
+        "TE": 20,
         "K": 2,
         "IDP-DL": 4,
-        "IDP-LB": 18,
+        "IDP-LB": 17,
         "IDP-DB": 7
       },
       "levels": {
-        "rb_ground": 146.1,
-        "rb_air": 50.1
+        "rb_ground": 155.8,
+        "rb_air": 55.9
       },
       "returns": {
-        "kr_yds": 127.0,
-        "kr_ret": 4.7,
-        "pr_yds": 19.4,
-        "ret_yds": 146.4,
-        "kr_rank": 5,
-        "ret_rank": 5
+        "kr_yds": 116.4,
+        "kr_ret": 4.4,
+        "pr_yds": 17.9,
+        "ret_yds": 134.3,
+        "kr_rank": 11,
+        "ret_rank": 9
       },
       "dst_against": {
-        "pts": 316.6,
-        "rank": 3
+        "pts": 330.2,
+        "rank": 2
       }
     },
     {
       "team": "JAX",
       "allowed": {
-        "QB": 269.8,
-        "RB": 196.5,
-        "WR": 382.0,
-        "TE": 65.2,
-        "K": 63.3,
-        "IDP-DL": 234.2,
-        "IDP-LB": 300.8,
-        "IDP-DB": 488.8
+        "QB": 246.3,
+        "RB": 205.6,
+        "WR": 362.7,
+        "TE": 59.7,
+        "K": 54.4,
+        "IDP-DL": 262.4,
+        "IDP-LB": 300.7,
+        "IDP-DB": 454.7
       },
       "rank": {
-        "QB": 7,
-        "RB": 28,
+        "QB": 16,
+        "RB": 26,
         "WR": 1,
-        "TE": 28,
-        "K": 24,
-        "IDP-DL": 15,
+        "TE": 31,
+        "K": 28,
+        "IDP-DL": 11,
         "IDP-LB": 32,
-        "IDP-DB": 16
+        "IDP-DB": 20
       },
       "levels": {
-        "rb_ground": 81.8,
-        "rb_air": 49.7
+        "rb_ground": 90.7,
+        "rb_air": 47.3
       },
       "returns": {
-        "kr_yds": 139.8,
-        "kr_ret": 4.8,
-        "pr_yds": 14.0,
-        "ret_yds": 153.8,
+        "kr_yds": 138.7,
+        "kr_ret": 4.9,
+        "pr_yds": 14.9,
+        "ret_yds": 153.6,
         "kr_rank": 2,
         "ret_rank": 2
       },
       "dst_against": {
-        "pts": 251.8,
-        "rank": 21
+        "pts": 254.3,
+        "rank": 22
       }
     },
     {
       "team": "KC",
       "allowed": {
-        "QB": 215.8,
-        "RB": 238.7,
-        "WR": 251.5,
-        "TE": 115.7,
-        "K": 89.8,
-        "IDP-DL": 199.2,
-        "IDP-LB": 362.2,
-        "IDP-DB": 419.8
+        "QB": 220.4,
+        "RB": 239.0,
+        "WR": 255.6,
+        "TE": 108.3,
+        "K": 90.1,
+        "IDP-DL": 199.3,
+        "IDP-LB": 364.7,
+        "IDP-DB": 441.3
       },
       "rank": {
-        "QB": 27,
-        "RB": 9,
-        "WR": 28,
-        "TE": 6,
-        "K": 11,
-        "IDP-DL": 26,
-        "IDP-LB": 21,
-        "IDP-DB": 28
+        "QB": 24,
+        "RB": 15,
+        "WR": 27,
+        "TE": 5,
+        "K": 10,
+        "IDP-DL": 27,
+        "IDP-LB": 20,
+        "IDP-DB": 25
       },
       "levels": {
-        "rb_ground": 117.5,
-        "rb_air": 51.3
+        "rb_ground": 114.7,
+        "rb_air": 57.3
       },
       "returns": {
-        "kr_yds": 126.0,
+        "kr_yds": 126.4,
         "kr_ret": 4.7,
-        "pr_yds": 15.5,
-        "ret_yds": 141.5,
-        "kr_rank": 7,
-        "ret_rank": 6
+        "pr_yds": 15.6,
+        "ret_yds": 142.0,
+        "kr_rank": 5,
+        "ret_rank": 4
       },
       "dst_against": {
-        "pts": 243.2,
-        "rank": 26
+        "pts": 244.0,
+        "rank": 24
       }
     },
     {
       "team": "LAC",
       "allowed": {
-        "QB": 208.7,
-        "RB": 209.7,
-        "WR": 257.7,
-        "TE": 76.7,
-        "K": 90.3,
-        "IDP-DL": 230.8,
-        "IDP-LB": 486.3,
-        "IDP-DB": 576.2
+        "QB": 197.1,
+        "RB": 209.3,
+        "WR": 264.6,
+        "TE": 70.7,
+        "K": 82.6,
+        "IDP-DL": 212.1,
+        "IDP-LB": 488.3,
+        "IDP-DB": 591.9
       },
       "rank": {
         "QB": 29,
         "RB": 24,
-        "WR": 26,
-        "TE": 18,
-        "K": 10,
-        "IDP-DL": 18,
-        "IDP-LB": 2,
+        "WR": 25,
+        "TE": 25,
+        "K": 15,
+        "IDP-DL": 25,
+        "IDP-LB": 1,
         "IDP-DB": 1
       },
       "levels": {
-        "rb_ground": 160.8,
-        "rb_air": 35.5
+        "rb_ground": 166.9,
+        "rb_air": 31.0
       },
       "returns": {
-        "kr_yds": 70.7,
-        "kr_ret": 2.8,
-        "pr_yds": 13.3,
-        "ret_yds": 84.0,
+        "kr_yds": 73.0,
+        "kr_ret": 3.0,
+        "pr_yds": 12.6,
+        "ret_yds": 85.6,
         "kr_rank": 30,
-        "ret_rank": 31
+        "ret_rank": 30
       },
       "dst_against": {
-        "pts": 351.2,
+        "pts": 349.7,
         "rank": 1
       }
     },
     {
       "team": "LAR",
       "allowed": {
-        "QB": 220.1,
-        "RB": 233.3,
-        "WR": 250.1,
-        "TE": 69.9,
-        "K": 100.6,
-        "IDP-DL": 185.0,
-        "IDP-LB": 401.4,
-        "IDP-DB": 563.3
+        "QB": 218.4,
+        "RB": 221.4,
+        "WR": 253.8,
+        "TE": 73.4,
+        "K": 104.2,
+        "IDP-DL": 184.4,
+        "IDP-LB": 388.8,
+        "IDP-DB": 546.6
       },
       "rank": {
-        "QB": 23,
-        "RB": 13,
-        "WR": 29,
+        "QB": 25,
+        "RB": 20,
+        "WR": 28,
         "TE": 23,
-        "K": 5,
-        "IDP-DL": 28,
-        "IDP-LB": 13,
-        "IDP-DB": 3
+        "K": 3,
+        "IDP-DL": 31,
+        "IDP-LB": 15,
+        "IDP-DB": 4
       },
       "levels": {
-        "rb_ground": 128.7,
-        "rb_air": 59.7
+        "rb_ground": 122.0,
+        "rb_air": 57.6
       },
       "returns": {
-        "kr_yds": 101.9,
+        "kr_yds": 95.0,
         "kr_ret": 3.4,
-        "pr_yds": 23.0,
-        "ret_yds": 124.9,
-        "kr_rank": 21,
-        "ret_rank": 14
+        "pr_yds": 21.0,
+        "ret_yds": 116.0,
+        "kr_rank": 23,
+        "ret_rank": 20
       },
       "dst_against": {
-        "pts": 260.0,
-        "rank": 18
+        "pts": 243.6,
+        "rank": 25
       }
     },
     {
       "team": "LV",
       "allowed": {
-        "QB": 250.6,
-        "RB": 276.6,
-        "WR": 260.0,
-        "TE": 104.9,
-        "K": 52.6,
-        "IDP-DL": 215.9,
-        "IDP-LB": 392.9,
-        "IDP-DB": 531.3
+        "QB": 253.2,
+        "RB": 274.1,
+        "WR": 280.2,
+        "TE": 98.0,
+        "K": 63.8,
+        "IDP-DL": 213.9,
+        "IDP-LB": 381.9,
+        "IDP-DB": 521.8
       },
       "rank": {
-        "QB": 16,
+        "QB": 13,
         "RB": 1,
-        "WR": 24,
-        "TE": 7,
-        "K": 29,
-        "IDP-DL": 22,
-        "IDP-LB": 14,
-        "IDP-DB": 8
+        "WR": 22,
+        "TE": 9,
+        "K": 25,
+        "IDP-DL": 23,
+        "IDP-LB": 16,
+        "IDP-DB": 9
       },
       "levels": {
-        "rb_ground": 188.6,
-        "rb_air": 49.3
+        "rb_ground": 194.2,
+        "rb_air": 44.8
       },
       "returns": {
-        "kr_yds": 103.0,
-        "kr_ret": 4.1,
-        "pr_yds": 18.0,
-        "ret_yds": 121.0,
-        "kr_rank": 19,
-        "ret_rank": 18
+        "kr_yds": 98.4,
+        "kr_ret": 3.9,
+        "pr_yds": 18.5,
+        "ret_yds": 116.9,
+        "kr_rank": 22,
+        "ret_rank": 19
       },
       "dst_against": {
-        "pts": 245.3,
-        "rank": 24
+        "pts": 231.8,
+        "rank": 28
       }
     },
     {
       "team": "MIA",
       "allowed": {
-        "QB": 246.0,
-        "RB": 257.3,
-        "WR": 239.5,
-        "TE": 125.8,
-        "K": 72.0,
-        "IDP-DL": 276.7,
-        "IDP-LB": 366.7,
-        "IDP-DB": 421.2
+        "QB": 245.1,
+        "RB": 252.7,
+        "WR": 229.1,
+        "TE": 114.1,
+        "K": 69.6,
+        "IDP-DL": 273.6,
+        "IDP-LB": 370.0,
+        "IDP-DB": 443.1
       },
       "rank": {
         "QB": 17,
-        "RB": 5,
+        "RB": 8,
         "WR": 31,
-        "TE": 2,
+        "TE": 4,
         "K": 20,
-        "IDP-DL": 7,
+        "IDP-DL": 8,
         "IDP-LB": 19,
-        "IDP-DB": 27
+        "IDP-DB": 24
       },
       "levels": {
-        "rb_ground": 158.0,
-        "rb_air": 69.2
+        "rb_ground": 161.7,
+        "rb_air": 61.6
       },
       "returns": {
-        "kr_yds": 67.2,
-        "kr_ret": 2.0,
-        "pr_yds": 17.8,
-        "ret_yds": 85.0,
-        "kr_rank": 31,
-        "ret_rank": 30
+        "kr_yds": 57.6,
+        "kr_ret": 1.7,
+        "pr_yds": 20.3,
+        "ret_yds": 77.9,
+        "kr_rank": 32,
+        "ret_rank": 32
       },
       "dst_against": {
-        "pts": 240.8,
-        "rank": 27
+        "pts": 238.6,
+        "rank": 26
       }
     },
     {
       "team": "MIN",
       "allowed": {
-        "QB": 159.5,
-        "RB": 222.8,
-        "WR": 244.5,
-        "TE": 55.2,
-        "K": 69.2,
-        "IDP-DL": 335.3,
-        "IDP-LB": 337.5,
-        "IDP-DB": 427.8
+        "QB": 158.9,
+        "RB": 243.6,
+        "WR": 241.1,
+        "TE": 55.4,
+        "K": 69.1,
+        "IDP-DL": 328.1,
+        "IDP-LB": 326.4,
+        "IDP-DB": 415.6
       },
       "rank": {
-        "QB": 31,
-        "RB": 18,
-        "WR": 30,
-        "TE": 31,
+        "QB": 32,
+        "RB": 12,
+        "WR": 29,
+        "TE": 32,
         "K": 22,
-        "IDP-DL": 2,
-        "IDP-LB": 27,
-        "IDP-DB": 26
+        "IDP-DL": 1,
+        "IDP-LB": 29,
+        "IDP-DB": 30
       },
       "levels": {
-        "rb_ground": 125.0,
-        "rb_air": 24.7
+        "rb_ground": 151.9,
+        "rb_air": 25.1
       },
       "returns": {
-        "kr_yds": 126.2,
-        "kr_ret": 5.0,
-        "pr_yds": 14.5,
-        "ret_yds": 140.7,
-        "kr_rank": 6,
-        "ret_rank": 7
+        "kr_yds": 118.3,
+        "kr_ret": 4.7,
+        "pr_yds": 12.4,
+        "ret_yds": 130.7,
+        "kr_rank": 8,
+        "ret_rank": 12
       },
       "dst_against": {
-        "pts": 291.8,
-        "rank": 8
+        "pts": 283.3,
+        "rank": 10
       }
     },
     {
       "team": "NE",
       "allowed": {
-        "QB": 241.7,
-        "RB": 219.7,
-        "WR": 295.0,
-        "TE": 70.7,
-        "K": 80.3,
-        "IDP-DL": 232.1,
-        "IDP-LB": 431.9,
-        "IDP-DB": 464.0
+        "QB": 236.0,
+        "RB": 228.1,
+        "WR": 292.6,
+        "TE": 70.9,
+        "K": 81.5,
+        "IDP-DL": 224.4,
+        "IDP-LB": 447.2,
+        "IDP-DB": 440.4
       },
       "rank": {
-        "QB": 19,
-        "RB": 21,
-        "WR": 16,
-        "TE": 22,
-        "K": 15,
-        "IDP-DL": 17,
-        "IDP-LB": 7,
-        "IDP-DB": 21
+        "QB": 20,
+        "RB": 16,
+        "WR": 14,
+        "TE": 24,
+        "K": 16,
+        "IDP-DL": 22,
+        "IDP-LB": 6,
+        "IDP-DB": 26
       },
       "levels": {
-        "rb_ground": 131.0,
-        "rb_air": 48.4
+        "rb_ground": 129.0,
+        "rb_air": 42.4
       },
       "returns": {
-        "kr_yds": 107.1,
-        "kr_ret": 4.3,
-        "pr_yds": 10.1,
-        "ret_yds": 117.2,
-        "kr_rank": 16,
-        "ret_rank": 23
+        "kr_yds": 111.5,
+        "kr_ret": 4.4,
+        "pr_yds": 11.4,
+        "ret_yds": 122.9,
+        "kr_rank": 15,
+        "ret_rank": 15
       },
       "dst_against": {
-        "pts": 264.7,
+        "pts": 268.1,
         "rank": 17
       }
     },
@@ -884,14 +884,14 @@
         "IDP-DB": 554.3
       },
       "rank": {
-        "QB": 8,
-        "RB": 6,
-        "WR": 12,
-        "TE": 9,
-        "K": 13,
-        "IDP-DL": 16,
+        "QB": 6,
+        "RB": 5,
+        "WR": 11,
+        "TE": 8,
+        "K": 12,
+        "IDP-DL": 19,
         "IDP-LB": 12,
-        "IDP-DB": 4
+        "IDP-DB": 2
       },
       "levels": {
         "rb_ground": 190.9,
@@ -903,11 +903,11 @@
         "pr_yds": 25.1,
         "ret_yds": 113.2,
         "kr_rank": 27,
-        "ret_rank": 25
+        "ret_rank": 22
       },
       "dst_against": {
         "pts": 273.9,
-        "rank": 14
+        "rank": 13
       }
     },
     {
@@ -923,14 +923,14 @@
         "IDP-DB": 540.6
       },
       "rank": {
-        "QB": 28,
-        "RB": 30,
+        "QB": 26,
+        "RB": 29,
         "WR": 10,
         "TE": 16,
-        "K": 25,
+        "K": 26,
         "IDP-DL": 5,
-        "IDP-LB": 14,
-        "IDP-DB": 6
+        "IDP-LB": 13,
+        "IDP-DB": 5
       },
       "levels": {
         "rb_ground": 148.3,
@@ -941,168 +941,168 @@
         "kr_ret": 4.3,
         "pr_yds": 25.3,
         "ret_yds": 132.4,
-        "kr_rank": 16,
+        "kr_rank": 17,
         "ret_rank": 11
       },
       "dst_against": {
         "pts": 297.7,
-        "rank": 5
+        "rank": 8
       }
     },
     {
       "team": "NYJ",
       "allowed": {
-        "QB": 233.0,
-        "RB": 233.7,
-        "WR": 255.6,
-        "TE": 72.9,
-        "K": 55.1,
-        "IDP-DL": 247.1,
-        "IDP-LB": 363.9,
-        "IDP-DB": 467.9
+        "QB": 240.6,
+        "RB": 252.9,
+        "WR": 232.8,
+        "TE": 89.2,
+        "K": 55.9,
+        "IDP-DL": 245.6,
+        "IDP-LB": 357.1,
+        "IDP-DB": 473.8
       },
       "rank": {
-        "QB": 20,
-        "RB": 12,
-        "WR": 27,
-        "TE": 20,
+        "QB": 19,
+        "RB": 7,
+        "WR": 30,
+        "TE": 11,
         "K": 27,
-        "IDP-DL": 12,
-        "IDP-LB": 20,
-        "IDP-DB": 20
+        "IDP-DL": 13,
+        "IDP-LB": 22,
+        "IDP-DB": 19
       },
       "levels": {
-        "rb_ground": 167.7,
-        "rb_air": 33.1
+        "rb_ground": 164.9,
+        "rb_air": 38.6
       },
       "returns": {
-        "kr_yds": 98.0,
-        "kr_ret": 3.9,
-        "pr_yds": 21.4,
-        "ret_yds": 119.4,
-        "kr_rank": 23,
-        "ret_rank": 20
+        "kr_yds": 103.8,
+        "kr_ret": 3.8,
+        "pr_yds": 18.8,
+        "ret_yds": 122.6,
+        "kr_rank": 19,
+        "ret_rank": 16
       },
       "dst_against": {
-        "pts": 267.0,
-        "rank": 16
+        "pts": 265.6,
+        "rank": 19
       }
     },
     {
       "team": "PHI",
       "allowed": {
-        "QB": 267.7,
-        "RB": 263.1,
-        "WR": 336.3,
-        "TE": 71.6,
-        "K": 84.4,
-        "IDP-DL": 199.3,
-        "IDP-LB": 342.0,
-        "IDP-DB": 472.9
+        "QB": 265.9,
+        "RB": 253.2,
+        "WR": 333.8,
+        "TE": 68.1,
+        "K": 95.8,
+        "IDP-DL": 232.5,
+        "IDP-LB": 348.0,
+        "IDP-DB": 482.8
       },
       "rank": {
         "QB": 9,
-        "RB": 3,
-        "WR": 8,
-        "TE": 21,
-        "K": 14,
-        "IDP-DL": 25,
-        "IDP-LB": 25,
-        "IDP-DB": 18
+        "RB": 6,
+        "WR": 5,
+        "TE": 28,
+        "K": 7,
+        "IDP-DL": 20,
+        "IDP-LB": 24,
+        "IDP-DB": 17
       },
       "levels": {
-        "rb_ground": 181.3,
-        "rb_air": 27.1
+        "rb_ground": 179.1,
+        "rb_air": 26.2
       },
       "returns": {
-        "kr_yds": 92.4,
-        "kr_ret": 3.6,
-        "pr_yds": 25.0,
-        "ret_yds": 117.4,
-        "kr_rank": 25,
-        "ret_rank": 22
+        "kr_yds": 86.4,
+        "kr_ret": 3.2,
+        "pr_yds": 25.2,
+        "ret_yds": 111.6,
+        "kr_rank": 28,
+        "ret_rank": 25
       },
       "dst_against": {
-        "pts": 291.1,
-        "rank": 9
+        "pts": 299.0,
+        "rank": 7
       }
     },
     {
       "team": "PIT",
       "allowed": {
-        "QB": 217.1,
-        "RB": 221.7,
-        "WR": 295.0,
-        "TE": 68.1,
-        "K": 120.0,
-        "IDP-DL": 278.6,
-        "IDP-LB": 354.4,
-        "IDP-DB": 491.6
+        "QB": 227.4,
+        "RB": 220.5,
+        "WR": 280.6,
+        "TE": 80.8,
+        "K": 115.9,
+        "IDP-DL": 285.6,
+        "IDP-LB": 344.5,
+        "IDP-DB": 495.8
       },
       "rank": {
-        "QB": 25,
-        "RB": 19,
-        "WR": 16,
-        "TE": 27,
+        "QB": 23,
+        "RB": 21,
+        "WR": 20,
+        "TE": 18,
         "K": 1,
         "IDP-DL": 6,
-        "IDP-LB": 23,
+        "IDP-LB": 26,
         "IDP-DB": 15
       },
       "levels": {
-        "rb_ground": 123.0,
-        "rb_air": 56.1
+        "rb_ground": 113.8,
+        "rb_air": 63.4
       },
       "returns": {
-        "kr_yds": 119.9,
-        "kr_ret": 4.3,
-        "pr_yds": 16.6,
-        "ret_yds": 136.5,
-        "kr_rank": 10,
-        "ret_rank": 9
+        "kr_yds": 117.5,
+        "kr_ret": 4.2,
+        "pr_yds": 17.1,
+        "ret_yds": 134.6,
+        "kr_rank": 9,
+        "ret_rank": 8
       },
       "dst_against": {
-        "pts": 288.6,
-        "rank": 10
+        "pts": 279.8,
+        "rank": 11
       }
     },
     {
       "team": "SEA",
       "allowed": {
-        "QB": 150.4,
-        "RB": 220.3,
-        "WR": 182.6,
-        "TE": 69.9,
-        "K": 66.3,
-        "IDP-DL": 222.3,
-        "IDP-LB": 494.1,
-        "IDP-DB": 501.7
+        "QB": 163.6,
+        "RB": 219.0,
+        "WR": 206.8,
+        "TE": 68.2,
+        "K": 69.5,
+        "IDP-DL": 251.5,
+        "IDP-LB": 458.6,
+        "IDP-DB": 480.9
       },
       "rank": {
-        "QB": 32,
-        "RB": 20,
+        "QB": 31,
+        "RB": 22,
         "WR": 32,
-        "TE": 23,
-        "K": 23,
-        "IDP-DL": 20,
-        "IDP-LB": 1,
-        "IDP-DB": 12
+        "TE": 27,
+        "K": 21,
+        "IDP-DL": 12,
+        "IDP-LB": 3,
+        "IDP-DB": 18
       },
       "levels": {
-        "rb_ground": 114.6,
-        "rb_air": 44.7
+        "rb_ground": 121.6,
+        "rb_air": 42.8
       },
       "returns": {
-        "kr_yds": 120.0,
+        "kr_yds": 116.0,
         "kr_ret": 4.1,
-        "pr_yds": 1.6,
-        "ret_yds": 121.6,
-        "kr_rank": 9,
-        "ret_rank": 17
+        "pr_yds": 2.2,
+        "ret_yds": 118.2,
+        "kr_rank": 12,
+        "ret_rank": 18
       },
       "dst_against": {
-        "pts": 292.1,
-        "rank": 7
+        "pts": 292.8,
+        "rank": 9
       }
     },
     {
@@ -1118,14 +1118,14 @@
         "IDP-DB": 432.9
       },
       "rank": {
-        "QB": 21,
-        "RB": 16,
-        "WR": 22,
-        "TE": 19,
-        "K": 6,
-        "IDP-DL": 27,
-        "IDP-LB": 16,
-        "IDP-DB": 25
+        "QB": 22,
+        "RB": 17,
+        "WR": 24,
+        "TE": 21,
+        "K": 4,
+        "IDP-DL": 29,
+        "IDP-LB": 14,
+        "IDP-DB": 27
       },
       "levels": {
         "rb_ground": 121.7,
@@ -1136,129 +1136,129 @@
         "kr_ret": 4.4,
         "pr_yds": 5.4,
         "ret_yds": 124.4,
-        "kr_rank": 11,
-        "ret_rank": 15
+        "kr_rank": 6,
+        "ret_rank": 14
       },
       "dst_against": {
         "pts": 219.7,
-        "rank": 29
+        "rank": 30
       }
     },
     {
       "team": "TB",
       "allowed": {
-        "QB": 217.0,
-        "RB": 212.9,
-        "WR": 283.7,
-        "TE": 93.3,
-        "K": 113.6,
-        "IDP-DL": 220.0,
-        "IDP-LB": 459.4,
-        "IDP-DB": 522.9
+        "QB": 191.9,
+        "RB": 205.5,
+        "WR": 282.2,
+        "TE": 85.8,
+        "K": 99.4,
+        "IDP-DL": 239.4,
+        "IDP-LB": 443.9,
+        "IDP-DB": 506.2
       },
       "rank": {
-        "QB": 26,
-        "RB": 23,
-        "WR": 21,
-        "TE": 10,
-        "K": 3,
-        "IDP-DL": 21,
-        "IDP-LB": 5,
-        "IDP-DB": 9
+        "QB": 30,
+        "RB": 27,
+        "WR": 18,
+        "TE": 12,
+        "K": 5,
+        "IDP-DL": 17,
+        "IDP-LB": 8,
+        "IDP-DB": 12
       },
       "levels": {
-        "rb_ground": 105.4,
-        "rb_air": 49.6
+        "rb_ground": 107.4,
+        "rb_air": 43.9
       },
       "returns": {
-        "kr_yds": 133.9,
+        "kr_yds": 134.0,
         "kr_ret": 5.4,
-        "pr_yds": 19.3,
-        "ret_yds": 153.2,
+        "pr_yds": 16.9,
+        "ret_yds": 150.9,
         "kr_rank": 3,
         "ret_rank": 3
       },
       "dst_against": {
-        "pts": 349.3,
-        "rank": 2
+        "pts": 329.9,
+        "rank": 3
       }
     },
     {
       "team": "TEN",
       "allowed": {
-        "QB": 255.6,
-        "RB": 228.1,
-        "WR": 305.1,
-        "TE": 63.0,
-        "K": 109.0,
-        "IDP-DL": 205.7,
-        "IDP-LB": 360.4,
-        "IDP-DB": 412.0
+        "QB": 275.9,
+        "RB": 226.9,
+        "WR": 344.8,
+        "TE": 69.4,
+        "K": 96.0,
+        "IDP-DL": 243.5,
+        "IDP-LB": 346.9,
+        "IDP-DB": 428.6
       },
       "rank": {
-        "QB": 13,
-        "RB": 15,
-        "WR": 13,
-        "TE": 30,
-        "K": 4,
-        "IDP-DL": 24,
-        "IDP-LB": 22,
-        "IDP-DB": 30
+        "QB": 3,
+        "RB": 19,
+        "WR": 4,
+        "TE": 26,
+        "K": 6,
+        "IDP-DL": 15,
+        "IDP-LB": 25,
+        "IDP-DB": 28
       },
       "levels": {
-        "rb_ground": 168.3,
-        "rb_air": 41.3
+        "rb_ground": 159.9,
+        "rb_air": 44.8
       },
       "returns": {
-        "kr_yds": 49.3,
-        "kr_ret": 2.1,
-        "pr_yds": 16.1,
-        "ret_yds": 65.4,
-        "kr_rank": 32,
-        "ret_rank": 32
+        "kr_yds": 66.5,
+        "kr_ret": 2.9,
+        "pr_yds": 18.0,
+        "ret_yds": 84.5,
+        "kr_rank": 31,
+        "ret_rank": 31
       },
       "dst_against": {
-        "pts": 199.3,
-        "rank": 30
+        "pts": 220.0,
+        "rank": 29
       }
     },
     {
       "team": "WAS",
       "allowed": {
-        "QB": 291.7,
-        "RB": 214.8,
-        "WR": 318.8,
-        "TE": 116.8,
-        "K": 92.8,
-        "IDP-DL": 253.3,
-        "IDP-LB": 432.0,
-        "IDP-DB": 365.8
+        "QB": 275.9,
+        "RB": 227.0,
+        "WR": 291.6,
+        "TE": 116.3,
+        "K": 88.0,
+        "IDP-DL": 244.3,
+        "IDP-LB": 417.4,
+        "IDP-DB": 367.4
       },
       "rank": {
         "QB": 3,
-        "RB": 22,
-        "WR": 9,
-        "TE": 4,
-        "K": 8,
-        "IDP-DL": 11,
-        "IDP-LB": 6,
+        "RB": 18,
+        "WR": 15,
+        "TE": 3,
+        "K": 13,
+        "IDP-DL": 14,
+        "IDP-LB": 11,
         "IDP-DB": 32
       },
       "levels": {
-        "rb_ground": 122.8,
-        "rb_air": 46.2
+        "rb_ground": 120.9,
+        "rb_air": 46.3
       },
       "returns": {
-        "kr_yds": 109.7,
-        "kr_ret": 4.0,
-        "pr_yds": 21.5,
-        "ret_yds": 131.2,
-        "kr_rank": 15,
-        "ret_rank": 12
+        "kr_yds": 114.6,
+        "kr_ret": 4.3,
+        "pr_yds": 20.1,
+        "ret_yds": 134.7,
+        "kr_rank": 13,
+        "ret_rank": 7
       },
       "dst_against": {
-        "pts": 256.3,
-        "rank": 19
+        "pts": 257.0,
+        "rank": 21
       }
     }
   ]
