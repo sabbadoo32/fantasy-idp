@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "through_week": 10,
-  "generated": "2026-11-17 20:42",
+  "generated": "2026-11-24 22:12",
   "positions": [
     "QB",
     "RB",
@@ -62,7 +62,7 @@
         "K": 64.0,
         "IDP-DL": 199.0,
         "IDP-LB": 436.5,
-        "IDP-DB": 464.6
+        "IDP-DB": 464.1
       },
       "rank": {
         "QB": 6,
@@ -72,7 +72,7 @@
         "K": 26,
         "IDP-DL": 29,
         "IDP-LB": 6,
-        "IDP-DB": 20
+        "IDP-DB": 21
       },
       "levels": {
         "rb_ground": 163.9,
@@ -138,9 +138,9 @@
         "WR": 307.7,
         "TE": 96.4,
         "K": 67.7,
-        "IDP-DL": 197.8,
+        "IDP-DL": 198.9,
         "IDP-LB": 432.8,
-        "IDP-DB": 469.4
+        "IDP-DB": 468.9
       },
       "rank": {
         "QB": 17,
@@ -969,7 +969,7 @@
         "K": 30,
         "IDP-DL": 12,
         "IDP-LB": 16,
-        "IDP-DB": 21
+        "IDP-DB": 20
       },
       "levels": {
         "rb_ground": 177.0,
